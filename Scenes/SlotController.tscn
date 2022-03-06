@@ -1,0 +1,344 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Wheel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/WheelGrouper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Wheel.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/KineTile.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/SlotController.gd" type="Script" id=6]
+
+[node name="SlotController" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( 5.5, -2 )
+color = Color( 0, 0.203922, 0.176471, 1 )
+polygon = PoolVector2Array( -11.3721, -5.56721, -14.8456, 155.08, 211.798, 160.725, 203.982, -2.96212 )
+
+[node name="SlotSpinner" parent="." groups=[
+"slotmachine",
+] instance=ExtResource( 2 )]
+position = Vector2( 1, -17 )
+tilesize = 16
+wheelnum = 3
+tilepadding = 2
+winline = 46
+
+[node name="Wheel" type="Node2D" parent="SlotSpinner" groups=[
+"wheel",
+] instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+tilenum = 6
+speed = 66.0
+
+[node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 2
+
+[node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 18 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 0
+
+[node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 36 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 1
+
+[node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 54 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.5, 1, 0, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 5
+
+[node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 72 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 4
+
+[node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 90 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+maxdistance = 108
+speed = 66
+tiletype = 3
+
+[node name="Wheel2" type="Node2D" parent="SlotSpinner" groups=[
+"wheel",
+] instance=ExtResource( 1 )]
+position = Vector2( 20, 0 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+tilenum = 6
+speed = 54.0
+
+[node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 5
+
+[node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 18 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 2
+
+[node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 36 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 0
+
+[node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 54 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 4
+
+[node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 72 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 1, 0.84, 0, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 3
+
+[node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 90 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+maxdistance = 108
+speed = 54
+tiletype = 1
+
+[node name="Wheel3" type="Node2D" parent="SlotSpinner" groups=[
+"wheel",
+] instance=ExtResource( 1 )]
+position = Vector2( 40, 0 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+tilenum = 6
+speed = 59.0
+
+[node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 3
+
+[node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 18 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 1
+
+[node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 36 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.5, 1, 0, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 5
+
+[node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 54 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 2
+
+[node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 72 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 4
+
+[node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
+"tile",
+] instance=ExtResource( 4 )]
+position = Vector2( 0, 90 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilesize = 16
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 108
+speed = 59
+tiletype = 0
+
+[node name="SlotShadow" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -19.4804, 10.6316 )
+scale = Vector2( 1.20321, 1 )
+color = Color( 0.054902, 0.168627, 0.141176, 0.278431 )
+invert_enable = true
+polygon = PoolVector2Array( 60.6547, 48.8684, 60.2392, 79.3684, 137.948, 78.8684, 137.948, 50.8684 )
+
+[node name="Border" type="Polygon2D" parent="."]
+visible = false
+position = Vector2( -16.9804, 9.13163 )
+scale = Vector2( 1.20321, 1 )
+color = Color( 0, 1, 0.717647, 1 )
+invert_enable = true
+invert_border = 50.0
+polygon = PoolVector2Array( 65.8545, 42.1928, 63.9761, 94.4103, 129.887, 93.5436, 129.527, 40.2408 )
+
+[connection signal="wheels_stopped" from="SlotSpinner" to="." method="wheelsAllStopped"]

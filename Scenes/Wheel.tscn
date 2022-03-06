@@ -1,0 +1,172 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Wheel.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/KineTile.gd" type="Script" id=3]
+
+[node name="Wheel" type="Node2D" groups=[
+"wheel",
+]]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+tilesize = 10
+tilenum = 11
+speed = 25.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tile" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0.5, 1, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 7
+
+[node name="Tile2" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 12 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 1, 0.84, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 0
+
+[node name="Tile3" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 24 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 1, 0.84, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 5
+
+[node name="Tile4" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 36 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0, 1, 1, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 2
+
+[node name="Tile5" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 48 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 1, 1, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 9
+
+[node name="Tile6" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 60 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 1, 0.84, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 6
+
+[node name="Tile7" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 72 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 3
+
+[node name="Tile8" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 84 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 1, 1, 0, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 1
+
+[node name="Tile9" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 96 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 132
+speed = 25
+
+[node name="Tile10" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 108 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0.68, 1, 0.18, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 4
+
+[node name="Tile11" type="KinematicBody2D" parent="." groups=[
+"tile",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 120 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -0.443138 ],
+"_edit_vertical_guides_": [ 10.0183 ]
+}
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+maxdistance = 132
+speed = 25
+tiletype = 10
+
+[connection signal="tween_completed" from="Tween" to="." method="autoupdateState"]
