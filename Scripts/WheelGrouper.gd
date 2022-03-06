@@ -61,12 +61,21 @@ func _draw():
 	if Engine.editor_hint:
 		draw_line(Vector2(-20, winline), Vector2(100, winline), Color.crimson)
 
+	
 
 func killWheels():
-	for wheel in get_children():
+	for wheel in getWheels():
 		remove_child(wheel)
 		wheel.killSelf()
 	wheels.clear()
+
+
+func getWheels():
+	var wheels := []
+	for node in get_children():
+		if node.is_in_group("wheel"):
+			wheels.append(node)
+	return wheels
 
 
 func createWheels():

@@ -1,11 +1,13 @@
 extends Control
 
 onready var playerCoin := $"/root/PlayerCoin"
+onready var sounder := $"/root/Sounder"
 
 
 func _ready():
 	changeCoinCountTo(playerCoin.getCoins())
 	playerCoin.connect("updateCoinCount", self, "changeCoinCount")
+	sounder.connect("clicker", self, "clickSound")
 
 
 func _on_MoneyToucher_ateCoins(coinCount):
@@ -32,3 +34,7 @@ func changeCoinCount(oldVal, newVal):
 func changeCoinCountTo(coinCount):
 	coinCount = ceil(coinCount)
 	$MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/CoinCount.text = String(coinCount)
+
+
+func clickSound():
+	$ClickPlayer.play()

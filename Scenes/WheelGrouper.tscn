@@ -29,7 +29,7 @@ __meta__ = {
 tilesize = 11
 tilenum = 6
 tilepadding = 6
-speed = 63.0
+speed = 61.0
 
 [node name="Tile" type="KinematicBody2D" parent="Wheel" groups=[
 "tile",
@@ -40,9 +40,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 102
-speed = 63
+speed = 61
 tiletype = 3
 
 [node name="Tile2" type="KinematicBody2D" parent="Wheel" groups=[
@@ -57,7 +57,7 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 102
-speed = 63
+speed = 61
 tiletype = 5
 
 [node name="Tile3" type="KinematicBody2D" parent="Wheel" groups=[
@@ -70,10 +70,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 4
+speed = 61
+tiletype = 1
 
 [node name="Tile4" type="KinematicBody2D" parent="Wheel" groups=[
 "tile",
@@ -87,8 +87,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 2
+speed = 61
+tiletype = 4
 
 [node name="Tile5" type="KinematicBody2D" parent="Wheel" groups=[
 "tile",
@@ -100,10 +100,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 1
+speed = 61
+tiletype = 2
 
 [node name="Tile6" type="KinematicBody2D" parent="Wheel" groups=[
 "tile",
@@ -115,9 +115,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 102
-speed = 63
+speed = 61
 tiletype = 0
 
 [node name="Wheel2" type="Node2D" parent="." groups=[
@@ -131,7 +131,7 @@ __meta__ = {
 tilesize = 11
 tilenum = 6
 tilepadding = 6
-speed = 61.0
+speed = 50.0
 
 [node name="Tile" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -144,8 +144,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 3
+speed = 50
+tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -157,10 +157,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 5
+speed = 50
+tiletype = 2
 
 [node name="Tile3" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -172,10 +172,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 1
+speed = 50
+tiletype = 3
 
 [node name="Tile4" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -187,10 +187,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.68, 1, 0.18, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 4
+speed = 50
+tiletype = 0
 
 [node name="Tile5" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -202,10 +202,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 2
+speed = 50
+tiletype = 4
 
 [node name="Tile6" type="KinematicBody2D" parent="Wheel2" groups=[
 "tile",
@@ -217,10 +217,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 102
-speed = 61
-tiletype = 0
+speed = 50
+tiletype = 1
 
 [node name="Wheel3" type="Node2D" parent="." groups=[
 "wheel",
@@ -233,7 +233,7 @@ __meta__ = {
 tilesize = 11
 tilenum = 6
 tilepadding = 6
-speed = 50.0
+speed = 63.0
 
 [node name="Tile" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -244,10 +244,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 5
+speed = 63
+tiletype = 1
 
 [node name="Tile2" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -259,10 +259,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 2
+speed = 63
+tiletype = 4
 
 [node name="Tile3" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -276,8 +276,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 3
+speed = 63
+tiletype = 5
 
 [node name="Tile4" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -289,10 +289,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 0
+speed = 63
+tiletype = 3
 
 [node name="Tile5" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -304,10 +304,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 4
+speed = 63
+tiletype = 2
 
 [node name="Tile6" type="KinematicBody2D" parent="Wheel3" groups=[
 "tile",
@@ -319,10 +319,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 102
-speed = 50
-tiletype = 1
+speed = 63
+tiletype = 0
 
 [node name="Wheel4" type="Node2D" parent="." groups=[
 "wheel",
@@ -335,7 +335,7 @@ __meta__ = {
 tilesize = 11
 tilenum = 6
 tilepadding = 6
-speed = 63.0
+speed = 65.0
 
 [node name="Tile" type="KinematicBody2D" parent="Wheel4" groups=[
 "tile",
@@ -346,10 +346,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 1
+speed = 65
+tiletype = 4
 
 [node name="Tile2" type="KinematicBody2D" parent="Wheel4" groups=[
 "tile",
@@ -361,10 +361,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 4
+speed = 65
+tiletype = 3
 
 [node name="Tile3" type="KinematicBody2D" parent="Wheel4" groups=[
 "tile",
@@ -378,7 +378,7 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 102
-speed = 63
+speed = 65
 tiletype = 5
 
 [node name="Tile4" type="KinematicBody2D" parent="Wheel4" groups=[
@@ -391,10 +391,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 3
+speed = 65
+tiletype = 2
 
 [node name="Tile5" type="KinematicBody2D" parent="Wheel4" groups=[
 "tile",
@@ -406,10 +406,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 2
+speed = 65
+tiletype = 0
 
 [node name="Tile6" type="KinematicBody2D" parent="Wheel4" groups=[
 "tile",
@@ -423,8 +423,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 102
-speed = 63
-tiletype = 0
+speed = 65
+tiletype = 1
 
 [node name="Wheel5" type="Node2D" parent="." groups=[
 "wheel",
@@ -437,7 +437,7 @@ __meta__ = {
 tilesize = 11
 tilenum = 6
 tilepadding = 6
-speed = 65.0
+speed = 61.0
 
 [node name="Tile" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -448,10 +448,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 4
+speed = 61
+tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -463,10 +463,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 3
+speed = 61
+tiletype = 1
 
 [node name="Tile3" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -480,8 +480,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 5
+speed = 61
+tiletype = 3
 
 [node name="Tile4" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -493,10 +493,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 0.68, 1, 0.18, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 2
+speed = 61
+tiletype = 4
 
 [node name="Tile5" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -510,8 +510,8 @@ __meta__ = {
 tilesize = 11
 tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 0
+speed = 61
+tiletype = 2
 
 [node name="Tile6" type="KinematicBody2D" parent="Wheel5" groups=[
 "tile",
@@ -523,7 +523,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 11
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 102
-speed = 65
-tiletype = 1
+speed = 61
+tiletype = 0

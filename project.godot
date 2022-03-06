@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerCoin="*res://Scripts/PlayerCoin.gd"
+Sounder="*res://Scripts/Sounder.gd"
 
 [display]
 

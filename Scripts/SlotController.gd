@@ -27,3 +27,8 @@ func wheelsAllStopped():
 			print(tile.tileindex)
 		for winner in winningTiles:
 			winner.blink()
+
+
+func _on_Clicker_area_entered(area):
+	if area.is_in_group("click"):
+		$"/root/Sounder".click()

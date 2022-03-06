@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Wheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/WheelGrouper.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/KineTile.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/SlotController.gd" type="Script" id=6]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 90, 0 )
 
 [node name="SlotController" type="Node2D"]
 script = ExtResource( 6 )
@@ -33,7 +36,7 @@ __meta__ = {
 "_edit_group_": true
 }
 tilenum = 6
-speed = 66.0
+speed = 64.0
 
 [node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -46,8 +49,8 @@ __meta__ = {
 tilesize = 16
 tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 2
+speed = 64
+tiletype = 4
 
 [node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -59,10 +62,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 0
+speed = 64
+tiletype = 3
 
 [node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -74,10 +77,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 1
+speed = 64
+tiletype = 5
 
 [node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -89,10 +92,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 5
+speed = 64
+tiletype = 2
 
 [node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -104,10 +107,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 4
+speed = 64
+tiletype = 1
 
 [node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel" groups=[
 "tile",
@@ -119,10 +122,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 108
-speed = 66
-tiletype = 3
+speed = 64
+tiletype = 0
 
 [node name="Wheel2" type="Node2D" parent="SlotSpinner" groups=[
 "wheel",
@@ -133,7 +136,7 @@ __meta__ = {
 "_edit_group_": true
 }
 tilenum = 6
-speed = 54.0
+speed = 57.0
 
 [node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
 "tile",
@@ -144,9 +147,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 108
-speed = 54
+speed = 57
 tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
@@ -159,10 +162,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 108
-speed = 54
-tiletype = 2
+speed = 57
+tiletype = 3
 
 [node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
 "tile",
@@ -174,10 +177,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.96, 0.64, 0.38, 1 )
 maxdistance = 108
-speed = 54
-tiletype = 0
+speed = 57
+tiletype = 1
 
 [node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
 "tile",
@@ -189,10 +192,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 108
-speed = 54
-tiletype = 4
+speed = 57
+tiletype = 0
 
 [node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
 "tile",
@@ -204,10 +207,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 108
-speed = 54
-tiletype = 3
+speed = 57
+tiletype = 4
 
 [node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel2" groups=[
 "tile",
@@ -219,10 +222,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 108
-speed = 54
-tiletype = 1
+speed = 57
+tiletype = 2
 
 [node name="Wheel3" type="Node2D" parent="SlotSpinner" groups=[
 "wheel",
@@ -233,7 +236,7 @@ __meta__ = {
 "_edit_group_": true
 }
 tilenum = 6
-speed = 59.0
+speed = 53.0
 
 [node name="Tile" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
 "tile",
@@ -244,10 +247,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 108
-speed = 59
-tiletype = 3
+speed = 53
+tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
 "tile",
@@ -259,9 +262,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 108
-speed = 59
+speed = 53
 tiletype = 1
 
 [node name="Tile3" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
@@ -274,10 +277,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.5, 1, 0, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 108
-speed = 59
-tiletype = 5
+speed = 53
+tiletype = 0
 
 [node name="Tile4" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
 "tile",
@@ -289,9 +292,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 108
-speed = 59
+speed = 53
 tiletype = 2
 
 [node name="Tile5" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
@@ -304,10 +307,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 108
-speed = 59
-tiletype = 4
+speed = 53
+tiletype = 3
 
 [node name="Tile6" type="KinematicBody2D" parent="SlotSpinner/Wheel3" groups=[
 "tile",
@@ -319,10 +322,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 108
-speed = 59
-tiletype = 0
+speed = 53
+tiletype = 4
 
 [node name="SlotShadow" type="Polygon2D" parent="."]
 visible = false
@@ -341,4 +344,11 @@ invert_enable = true
 invert_border = 50.0
 polygon = PoolVector2Array( 65.8545, 42.1928, 63.9761, 94.4103, 129.887, 93.5436, 129.527, 40.2408 )
 
+[node name="Clicker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clicker"]
+position = Vector2( 0, 29 )
+shape = SubResource( 1 )
+
 [connection signal="wheels_stopped" from="SlotSpinner" to="." method="wheelsAllStopped"]
+[connection signal="area_entered" from="Clicker" to="." method="_on_Clicker_area_entered"]

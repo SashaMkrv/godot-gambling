@@ -1,75 +1,77 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/KineTile.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/SlotSymbols.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/OutlineishSprite.tres" type="Material" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 16, 16 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.93432, 1.06641 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 16 )
+region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 16 )
+region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 16, 16 )
+region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 80, 0, 16, 16 )
+region = Rect2( 64, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 16, 16 )
+region = Rect2( 80, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 112, 0, 16, 16 )
+region = Rect2( 96, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 16, 16 )
+region = Rect2( 112, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 144, 0, 16, 16 )
+region = Rect2( 128, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 160, 0, 16, 16 )
+region = Rect2( 144, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 176, 0, 16, 16 )
+region = Rect2( 160, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 192, 0, 16, 16 )
+region = Rect2( 176, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
 region = Rect2( 208, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=16]
-resource_name = "Blink"
+[sub_resource type="Animation" id=17]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Square/AnimatedSprite:material:shader_param/on")
@@ -84,8 +86,7 @@ tracks/0/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=17]
-resource_name = "Unblink"
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Square/AnimatedSprite:material:shader_param/on")
 tracks/0/interp = 1
@@ -116,10 +117,18 @@ tiletype = 3
 color = Color( 1, 0.55, 0, 1 )
 polygon = PoolVector2Array( 0, 10, 10, 10, 10, 0, 0, 0 )
 
+[node name="Area2D" type="Area2D" parent="Square" groups=[
+"click",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Square/Area2D"]
+position = Vector2( 5.03814, 8.92723 )
+shape = SubResource( 1 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Square"]
 material = ExtResource( 3 )
 scale = Vector2( 0.625, 0.625 )
-frames = SubResource( 15 )
+frames = SubResource( 16 )
 centered = false
 
 [node name="Tile" type="Node2D" parent="." groups=[
@@ -127,5 +136,5 @@ centered = false
 ]]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Blink = SubResource( 16 )
-anims/Unblink = SubResource( 17 )
+anims/Blink = SubResource( 17 )
+anims/Unblink = SubResource( 18 )
