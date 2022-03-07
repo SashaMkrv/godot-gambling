@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Slots"
-run/main_scene="res://Scenes/SomeCoinUI.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 PlayerCoin="*res://Scripts/PlayerCoin.gd"
 Sounder="*res://Scripts/Sounder.gd"
+Time="*res://Scripts/Time.gd"
 
 [display]
 
