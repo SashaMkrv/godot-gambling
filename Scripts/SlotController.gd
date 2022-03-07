@@ -4,6 +4,7 @@ signal slots_stopped(tiles)
 signal slots_started()
 
 var winningTiles := []
+var spinCoinCount := 0
 
 func _ready():
 	pass
@@ -16,13 +17,15 @@ func interact(coinCount: int):
 			winner.unblink()
 	winningTiles.clear()
 	if started:
+		spinCoinCount = coinCount
 		emit_signal("slots_started")
 
 func wheelsAllStopped():
 	print("All stopped.")
 	if $SlotSpinner.has_method("getTiles"):
 		winningTiles = $SlotSpinner.getTiles()
-		emit_signal("slots_stopped", winningTiles)
+		emit_signal("slots_stopped", winningTiles, spinCoinCount)
+		spinCoinCount = 0
 		for tile in winningTiles:
 			print(tile.tileindex)
 		for winner in winningTiles:

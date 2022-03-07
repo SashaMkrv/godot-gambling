@@ -77,6 +77,32 @@ var tileToClass = {
 	TILE_TYPES.diamond: TILE_CLASSES.gem,
 }
 
+var bigPayout := [TILE_CLASSES.seven, TILE_CLASSES.rabbit, TILE_CLASSES.gem, TILE_CLASSES.goldthing]
+var mediumPayout := [TILE_CLASSES.bar, TILE_CLASSES.greenthing]
+var littlePayout := [TILE_CLASSES.fruit, TILE_CLASSES.suit]
+var noPayout := [TILE_CLASSES.nothing]
+
+enum PAYOUT_SIZES {big, medium, little, none}
+
+# the fact that I've jammed just. ALL of this stuff into the tile class
+# it is a sin I will never be absolved of
+
+func getClass():
+	return tileToClass[tiletype]
+
+func getPayoutSize():
+	var tileClass = getClass()
+	if tileClass in bigPayout:
+		return PAYOUT_SIZES.big
+	if tileClass in mediumPayout:
+		return PAYOUT_SIZES.medium
+	if tileClass in littlePayout:
+		return PAYOUT_SIZES.little
+	if tileClass in noPayout:
+		return PAYOUT_SIZES.none
+	return PAYOUT_SIZES.none
+
+
 func updateColor(newVar: Color):
 	tilecolor = newVar
 	redraw()
@@ -122,13 +148,13 @@ func killSelf():
 func _ready():
 	ready = true
 	redraw()
-
-func moveToStartIfOutOfBounds():
-	if position.y > maxdistance:
-		var diff = maxdistance - position.y
-		position.y = diff
-		return true
-	return false 
+#
+#func moveToStartIfOutOfBounds():
+#	if position.y > maxdistance:
+#		var diff = maxdistance - position.y
+#		position.y = diff
+#		return true
+#	return false 
 
 
 func blink():
