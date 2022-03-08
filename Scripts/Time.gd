@@ -1,12 +1,37 @@
 extends Node
 
 signal time_changed
+signal isEvening
+signal isNight
+signal isMorning
+signal isAfternoon
 
 var gameYear := 1
 var gameMonth := 1
 var gameDay := 1
-var gameHour := 0
-var gameMinute := 0
+var gameHour := 11
+var gameMinute := 50
+
+enum TIME_SLOT {morning, afternoon, evening, night}
+var timeTransition = {
+	TIME_SLOT.evening: 19,
+	TIME_SLOT.afternoon: 12,
+	TIME_SLOT.morning: 6,
+	TIME_SLOT.night: 0
+}
+var timeSlots := [TIME_SLOT.evening, TIME_SLOT.afternoon, TIME_SLOT.morning, TIME_SLOT.night]
+
+var currentTimeSlot
+
+func _ready():
+	currentTimeSlot = calcTimeSlot()
+
+
+func calcTimeSlot():
+	for slot in timeSlots:
+		if gameHour >= timeTransition[slot]:
+			return slot
+	return TIME_SLOT.night
 
 
 func getTimeString():
@@ -15,7 +40,13 @@ func getTimeString():
 
 func tick():
 	gameMinute += 1
+	timeUpdated()
+	
+
+
+func timeUpdated():
 	rolloverTime()
+	checkForTimeSlot()
 	emit_signal("time_changed")
 
 
@@ -36,3 +67,28 @@ func rolloverTime():
 		return
 	gameMonth = 0
 	gameYear += 1
+
+
+func checkForTimeSlot():
+	var newTimeSlot = calcTimeSlot()
+	if currentTimeSlot != newTimeSlot:
+		match newTimeSlot:
+			TIME_SLOT.night:
+				emit_signal("isNight")
+			TIME_SLOT.evening:
+				emit_signal("isEvening")
+			TIME_SLOT.afternoon:
+				emit_signal("isAfternoon")
+			TIME_SLOT.morning:
+				emit_signal("isMorning")
+	currentTimeSlot = newTimeSlot
+
+
+func setToTimeSlot(timeSlot: String):
+	var newTime = timeTransition[timeSlot]
+	if newTime == null:
+		print("bad time slot name")
+		return
+	gameHour = newTime
+	gameMinute = 0
+	timeUpdated()
