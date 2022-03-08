@@ -8,10 +8,10 @@
 [ext_resource path="res://Sprites/light.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/twocoinsicon.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/filthyarcadecarpet32x32.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/TimeLabel.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/UIBits/TimeLabel.gd" type="Script" id=9]
 [ext_resource path="res://Sprites/playercharacter.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/playerbackground.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/CharacterPortrait.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/UIBits/CharacterPortrait.gd" type="Script" id=12]
 
 [sub_resource type="Theme" id=1]
 

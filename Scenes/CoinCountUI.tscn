@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scripts/CoinCount.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UIBits/CoinCount.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/NinePatchRectPurpleWhite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/twocoinsicon.png" type="Texture" id=3]
+
 
 [node name="CoinCountUI" type="MarginContainer"]
 __meta__ = {
