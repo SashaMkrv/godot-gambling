@@ -85,7 +85,8 @@ mouse_filter = 2
 theme = SubResource( 12 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 100.0 ]
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -116,25 +117,27 @@ margin_top = 3.0
 margin_right = 197.0
 margin_bottom = 147.0
 mouse_filter = 2
+size_flags_horizontal = 3
 
 [node name="TopBarStatsUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2
 margin_right = 194.0
 margin_bottom = 22.0
 mouse_filter = 2
+size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CoinCountUI" parent="MarginContainer/VBoxContainer/TopBarStatsUI" instance=ExtResource( 4 )]
-margin_left = 25.0
-margin_right = 62.0
+margin_left = 38.0
+margin_right = 75.0
 margin_bottom = 22.0
 
 [node name="TimerUI" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 66.0
-margin_right = 116.0
+margin_left = 79.0
+margin_right = 129.0
 margin_bottom = 22.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
@@ -159,9 +162,10 @@ text = "02:59 01 Wn"
 script = ExtResource( 9 )
 
 [node name="InventoryOpen" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 120.0
-margin_right = 142.0
+margin_left = 133.0
+margin_right = 155.0
 margin_bottom = 22.0
+size_flags_horizontal = 9
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 
@@ -187,9 +191,11 @@ texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 17 )
 
 [node name="InventoryClose" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
+visible = false
 margin_left = 146.0
 margin_right = 168.0
 margin_bottom = 22.0
+size_flags_horizontal = 9
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 
@@ -234,10 +240,9 @@ size_flags_vertical = 3
 player_coin = ExtResource( 21 )
 
 [node name="BigSlotWrapper" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 margin_top = 26.0
 margin_right = 194.0
-margin_bottom = 42.0
+margin_bottom = 108.0
 mouse_filter = 2
 size_flags_vertical = 3
 alignment = 1
@@ -245,7 +250,7 @@ alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/BigSlotWrapper"]
 margin_left = 97.0
 margin_right = 97.0
-margin_bottom = 16.0
+margin_bottom = 82.0
 mouse_filter = 2
 size_flags_vertical = 3
 
@@ -253,6 +258,7 @@ size_flags_vertical = 3
 
 [node name="ShopUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2
+visible = false
 margin_top = 26.0
 margin_right = 194.0
 margin_bottom = 108.0
