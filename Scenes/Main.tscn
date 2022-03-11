@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/GodUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/NinePatchRectPurpleWhite.tscn" type="PackedScene" id=2]
@@ -21,8 +21,17 @@
 [ext_resource path="res://Scripts/UIBits/HatSprite.gd" type="Script" id=19]
 [ext_resource path="res://Resources/PlayerHatResource.tres" type="Resource" id=20]
 [ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=21]
+[ext_resource path="res://Fonts/m3x6.ttf" type="DynamicFontData" id=22]
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="DynamicFont" id=11]
+outline_size = 1
+outline_color = Color( 0.219608, 0.298039, 0.317647, 1 )
+extra_spacing_top = -5
+extra_spacing_space = -1
+font_data = ExtResource( 22 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 48, 128, 51, 0, 145, 1, 147, 127, 149, 268, 49, 268 )
@@ -79,7 +88,7 @@ tracks/0/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme = SubResource( 1 )
+theme = SubResource( 12 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -125,23 +134,23 @@ __meta__ = {
 }
 
 [node name="CoinCountUI" parent="MarginContainer/VBoxContainer/TopBarStatsUI" instance=ExtResource( 4 )]
-margin_left = 2.0
-margin_right = 49.0
+margin_left = 25.0
+margin_right = 62.0
 margin_bottom = 22.0
 
 [node name="TimerUI" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 53.0
-margin_right = 140.0
+margin_left = 66.0
+margin_right = 116.0
 margin_bottom = 22.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 
 [node name="NinePatchRect" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI" instance=ExtResource( 2 )]
-margin_right = 87.0
+margin_right = 50.0
 margin_bottom = 22.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI"]
-margin_right = 87.0
+margin_right = 50.0
 margin_bottom = 22.0
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
@@ -149,15 +158,15 @@ custom_constants/margin_left = 3
 
 [node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI/MarginContainer"]
 margin_left = 3.0
-margin_top = 5.0
-margin_right = 84.0
-margin_bottom = 19.0
+margin_top = 8.0
+margin_right = 47.0
+margin_bottom = 16.0
 text = "02:59 01 Wn"
 script = ExtResource( 9 )
 
 [node name="InventoryOpen" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 144.0
-margin_right = 166.0
+margin_left = 120.0
+margin_right = 142.0
 margin_bottom = 22.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
@@ -179,11 +188,13 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 19.0
 margin_bottom = 19.0
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
 
 [node name="InventoryClose" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 170.0
-margin_right = 192.0
+margin_left = 146.0
+margin_right = 168.0
 margin_bottom = 22.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
@@ -205,13 +216,15 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 19.0
 margin_bottom = 19.0
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 18 )
 
 [node name="SlotWrapper" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
-margin_top = 24.0
+margin_top = 26.0
 margin_right = 194.0
-margin_bottom = 108.0
+margin_bottom = 42.0
 mouse_filter = 2
 size_flags_vertical = 3
 alignment = 1
@@ -219,7 +232,7 @@ alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/SlotWrapper"]
 margin_left = 97.0
 margin_right = 97.0
-margin_bottom = 84.0
+margin_bottom = 16.0
 mouse_filter = 2
 size_flags_vertical = 3
 
@@ -651,7 +664,7 @@ custom_constants/separation = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer"]
 margin_right = 87.0
-margin_bottom = 25.0
+margin_bottom = 19.0
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
 custom_constants/margin_left = 3
@@ -661,13 +674,13 @@ custom_constants/margin_bottom = 3
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 22.0
+margin_bottom = 16.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer2"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 22.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
@@ -678,11 +691,11 @@ custom_constants/margin_bottom = 2
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 78.0
-margin_bottom = 17.0
+margin_bottom = 11.0
 text = "Inventory"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer"]
-margin_top = 25.0
+margin_top = 19.0
 margin_right = 87.0
 margin_bottom = 82.0
 size_flags_horizontal = 3
@@ -698,7 +711,7 @@ hatFrame = ExtResource( 20 )
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 54.0
+margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -706,7 +719,7 @@ size_flags_vertical = 3
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 54.0
+margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 3
@@ -718,7 +731,7 @@ custom_constants/margin_bottom = 2
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 78.0
-margin_bottom = 49.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -727,9 +740,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer"]
-margin_top = 7.0
+margin_top = 10.0
 margin_right = 75.0
-margin_bottom = 39.0
+margin_bottom = 42.0
 size_flags_horizontal = 3
 alignment = 1
 __meta__ = {
@@ -760,7 +773,7 @@ centered = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
 frames = ExtResource( 13 )
-frame = 1
+frame = 2
 centered = false
 script = ExtResource( 19 )
 hatFrame = ExtResource( 20 )
@@ -771,6 +784,65 @@ margin_right = 65.0
 margin_bottom = 32.0
 texture_normal = ExtResource( 15 )
 stretch_mode = 3
+
+[node name="Attributions" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+pause_mode = 2
+visible = false
+margin_top = 98.0
+margin_right = 194.0
+margin_bottom = 166.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Attributions"]
+margin_right = 194.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/Attributions/MarginContainer" instance=ExtResource( 2 )]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 191.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Attributions/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 191.0
+margin_bottom = 65.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Attributions/MarginContainer/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 185.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Attributions/MarginContainer/MarginContainer/VBoxContainer"]
+margin_right = 182.0
+margin_bottom = 14.0
+text = "Attributions"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/Attributions/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 182.0
+margin_bottom = 49.0
+text = "m3x6, m5x7 fonts:
+Daniel Linssen"
+autowrap = true
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2
@@ -807,7 +879,7 @@ size_flags_horizontal = 3
 alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer"]
-margin_top = 12.0
+margin_top = 18.0
 margin_right = 158.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
@@ -818,10 +890,11 @@ custom_constants/margin_bottom = 0
 
 [node name="NinePatchRect" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer/MarginContainer2" instance=ExtResource( 2 )]
 margin_right = 158.0
+margin_bottom = 14.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer/MarginContainer2"]
 margin_right = 158.0
-margin_bottom = 20.0
+margin_bottom = 14.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 4
 custom_constants/margin_left = 5
@@ -834,7 +907,7 @@ __meta__ = {
 margin_left = 5.0
 margin_top = 4.0
 margin_right = 153.0
-margin_bottom = 18.0
+margin_bottom = 12.0
 text = "lol, what house edge?"
 
 [node name="Sounds" parent="." instance=ExtResource( 5 )]
