@@ -4,12 +4,22 @@ extends Node2D
 export (Resource) var player_coin
 
 
-enum PAYOUT_CLASSES {big2, big3, medium2, medium3, little2, little3, none}
+enum PAYOUT_CLASSES {big2, big3, big4, big5,
+medium2, medium3, medium4, medium5,
+little2, little3, little4, little5,
+none}
+
 const classToCoin = {
+	PAYOUT_CLASSES.big4: 300,
+	PAYOUT_CLASSES.big4: 150,
 	PAYOUT_CLASSES.big3: 100,
 	PAYOUT_CLASSES.big2: 50,
+	PAYOUT_CLASSES.medium5: 75,
+	PAYOUT_CLASSES.medium4: 50,
 	PAYOUT_CLASSES.medium3: 20,
 	PAYOUT_CLASSES.medium2: 10,
+	PAYOUT_CLASSES.little5: 15,
+	PAYOUT_CLASSES.little4: 10,
 	PAYOUT_CLASSES.little3: 5,
 	PAYOUT_CLASSES.little2: 1,
 	PAYOUT_CLASSES.none: 0
@@ -74,14 +84,28 @@ func getPayoutForClassAndLength(tile, tileClass, runLength):
 			return PAYOUT_CLASSES.big2
 		[tile.PAYOUT_SIZES.big, 3]:
 			return PAYOUT_CLASSES.big3
+		[tile.PAYOUT_SIZES.big, 4]:
+			return PAYOUT_CLASSES.big4
+		[tile.PAYOUT_SIZES.big, 5]:
+			return PAYOUT_CLASSES.big5
 		[tile.PAYOUT_SIZES.medium, 2]:
 			return PAYOUT_CLASSES.medium2
 		[tile.PAYOUT_SIZES.medium, 3]:
 			return PAYOUT_CLASSES.medium3
+		[tile.PAYOUT_SIZES.medium, 4]:
+			return PAYOUT_CLASSES.medium4
+		[tile.PAYOUT_SIZES.medium, 5]:
+			return PAYOUT_CLASSES.medium5
 		[tile.PAYOUT_SIZES.little, 2]:
 			return PAYOUT_CLASSES.little2
 		[tile.PAYOUT_SIZES.little, 3]:
 			return PAYOUT_CLASSES.little3
+		[tile.PAYOUT_SIZES.little, 4]:
+			return PAYOUT_CLASSES.little4
+		[tile.PAYOUT_SIZES.little, 5]:
+			return PAYOUT_CLASSES.little5
+	## There HAS to be a better way!
+	# and for the low price of <?#^*)&@#*^(*%) it can be yours!
 	return PAYOUT_CLASSES.none
 
 func spinStarted():
