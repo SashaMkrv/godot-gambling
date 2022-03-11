@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/UIBits/CoinCount.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/NinePatchRectPurpleWhite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/twocoinsicon.png" type="Texture" id=3]
-
+[ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=4]
 
 [node name="CoinCountUI" type="MarginContainer"]
 __meta__ = {
@@ -52,5 +52,6 @@ text = "100"
 valign = 1
 max_lines_visible = 1
 script = ExtResource( 1 )
+player_coin = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="MarginContainer/HSplitContainer/MarginContainer/CoinCount"]

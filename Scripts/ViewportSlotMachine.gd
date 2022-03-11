@@ -1,8 +1,7 @@
 extends Node2D
 
 
-signal ateCoins(coinCount)
-signal madeCoin(coinCount)
+export (Resource) var player_coin
 
 
 enum PAYOUT_CLASSES {big2, big3, medium2, medium3, little2, little3, none}
@@ -38,8 +37,8 @@ func slots_stopped(tiles, coinsUsed):
 	
 	var baseCoins = classToCoin[payoutClass]
 	var coinsGot = baseCoins * coinsUsed
-		
-	emit_signal("madeCoin", coinsGot)
+	
+	player_coin.addCoins(coinsGot)
 
 
 func getPayoutClass(tiles):
@@ -86,5 +85,5 @@ func getPayoutForClassAndLength(tile, tileClass, runLength):
 	return PAYOUT_CLASSES.none
 
 func spinStarted():
-	emit_signal("ateCoins", $ControlWrapper/CoinAdding.getCoinCount())
+	player_coin.eatCoins($ControlWrapper/CoinAdding.getCoinCount())
 	$ControlWrapper/CoinAdding.reset()

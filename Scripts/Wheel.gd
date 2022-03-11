@@ -154,6 +154,8 @@ func autoupdateState(_object, _key):
 
 
 func moveTiles():
+	if get_tree().paused:
+		return
 	if state == States.STILL:
 		return
 	

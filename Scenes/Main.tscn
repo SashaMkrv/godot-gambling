@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/GodUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/NinePatchRectPurpleWhite.tscn" type="PackedScene" id=2]
@@ -9,9 +9,18 @@
 [ext_resource path="res://Sprites/twocoinsicon.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/filthyarcadecarpet32x32.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/UIBits/TimeLabel.gd" type="Script" id=9]
-[ext_resource path="res://Sprites/playercharacter.png" type="Texture" id=10]
+[ext_resource path="res://Resources/BigPortraitFrames.tres" type="SpriteFrames" id=10]
 [ext_resource path="res://Sprites/playerbackground.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/UIBits/CharacterPortrait.gd" type="Script" id=12]
+[ext_resource path="res://Resources/HatSprite32Frames.tres" type="SpriteFrames" id=13]
+[ext_resource path="res://Scripts/LeftRightyHatty.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/rightbutton8x8.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/leftbutton8x8.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/invenopen16x16.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/invenclose16x16.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/UIBits/HatSprite.gd" type="Script" id=19]
+[ext_resource path="res://Resources/PlayerHatResource.tres" type="Resource" id=20]
+[ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=21]
 
 [sub_resource type="Theme" id=1]
 
@@ -20,26 +29,6 @@ polygon = PoolVector2Array( 48, 128, 51, 0, 145, 1, 147, 127, 149, 268, 49, 268 
 
 [sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 65, -19, 64, -6, 129, -6, 128, -18 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 10 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 10 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 10 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Animation" id=8]
 resource_name = "Blink"
@@ -126,8 +115,9 @@ margin_bottom = 147.0
 mouse_filter = 2
 
 [node name="TopBarStatsUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+pause_mode = 2
 margin_right = 194.0
-margin_bottom = 20.0
+margin_bottom = 22.0
 mouse_filter = 2
 alignment = 1
 __meta__ = {
@@ -135,36 +125,90 @@ __meta__ = {
 }
 
 [node name="CoinCountUI" parent="MarginContainer/VBoxContainer/TopBarStatsUI" instance=ExtResource( 4 )]
-margin_left = 50.0
-margin_right = 97.0
-margin_bottom = 20.0
+margin_left = 2.0
+margin_right = 49.0
+margin_bottom = 22.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
-margin_left = 101.0
-margin_right = 143.0
-margin_bottom = 20.0
+[node name="TimerUI" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
+margin_left = 53.0
+margin_right = 140.0
+margin_bottom = 22.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 
-[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/TopBarStatsUI/MarginContainer" instance=ExtResource( 2 )]
-margin_right = 42.0
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI" instance=ExtResource( 2 )]
+margin_right = 87.0
+margin_bottom = 22.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI/MarginContainer"]
-margin_right = 42.0
-margin_bottom = 20.0
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI"]
+margin_right = 87.0
+margin_bottom = 22.0
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 
-[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TopBarStatsUI/MarginContainer/MarginContainer"]
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer/TopBarStatsUI/TimerUI/MarginContainer"]
 margin_left = 3.0
-margin_top = 4.0
-margin_right = 39.0
-margin_bottom = 18.0
-text = "02:59"
+margin_top = 5.0
+margin_right = 84.0
+margin_bottom = 19.0
+text = "02:59 01 Wn"
 script = ExtResource( 9 )
 
+[node name="InventoryOpen" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
+margin_left = 144.0
+margin_right = 166.0
+margin_bottom = 22.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen" instance=ExtResource( 2 )]
+margin_right = 22.0
+margin_bottom = 22.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen"]
+margin_right = 22.0
+margin_bottom = 22.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="InventoryOpenButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 19.0
+margin_bottom = 19.0
+texture_normal = ExtResource( 17 )
+
+[node name="InventoryClose" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI"]
+margin_left = 170.0
+margin_right = 192.0
+margin_bottom = 22.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose" instance=ExtResource( 2 )]
+margin_right = 22.0
+margin_bottom = 22.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose"]
+margin_right = 22.0
+margin_bottom = 22.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="InventoryCloseButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 19.0
+margin_bottom = 19.0
+texture_normal = ExtResource( 18 )
+
 [node name="SlotWrapper" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 margin_top = 24.0
 margin_right = 194.0
 margin_bottom = 108.0
@@ -180,6 +224,7 @@ mouse_filter = 2
 size_flags_vertical = 3
 
 [node name="MoneyToucher" parent="MarginContainer/VBoxContainer/SlotWrapper/CenterContainer" instance=ExtResource( 3 )]
+player_coin = ExtResource( 21 )
 
 [node name="Light2D" type="Light2D" parent="MarginContainer/VBoxContainer/SlotWrapper"]
 visible = false
@@ -198,16 +243,16 @@ visible = false
 occluder = SubResource( 3 )
 
 [node name="ShopUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
-margin_top = 72.0
+pause_mode = 2
+margin_top = 26.0
 margin_right = 194.0
-margin_bottom = 117.0
+margin_bottom = 144.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI"]
 margin_right = 103.0
-margin_bottom = 45.0
+margin_bottom = 118.0
 size_flags_vertical = 3
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
@@ -218,13 +263,13 @@ custom_constants/margin_bottom = 3
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 100.0
-margin_bottom = 42.0
+margin_bottom = 115.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 100.0
-margin_bottom = 42.0
+margin_bottom = 115.0
 size_flags_vertical = 3
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
@@ -235,7 +280,7 @@ custom_constants/margin_bottom = 3
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 94.0
-margin_bottom = 36.0
+margin_bottom = 109.0
 scroll_horizontal_enabled = false
 
 [node name="ScrollBarAvoider" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/MarginContainer/MarginContainer/ScrollContainer"]
@@ -600,7 +645,7 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ShopUI"]
 margin_left = 107.0
 margin_right = 194.0
-margin_bottom = 45.0
+margin_bottom = 118.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
@@ -634,29 +679,34 @@ margin_left = 3.0
 margin_top = 3.0
 margin_right = 78.0
 margin_bottom = 17.0
-text = "Player"
+text = "Inventory"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer"]
 margin_top = 25.0
 margin_right = 87.0
-margin_bottom = 45.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 3
 custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 custom_constants/margin_bottom = 3
+script = ExtResource( 14 )
+hatFrame = ExtResource( 20 )
 
 [node name="NinePatchRect" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3" instance=ExtResource( 2 )]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 17.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 84.0
-margin_bottom = 17.0
+margin_bottom = 90.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 3
@@ -664,40 +714,93 @@ custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 custom_constants/margin_bottom = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 78.0
-margin_bottom = 12.0
+margin_bottom = 85.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Node2D" type="Node2D" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer"]
+margin_top = 25.0
+margin_right = 75.0
+margin_bottom = 57.0
+size_flags_horizontal = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite" type="Sprite" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/CenterContainer/Node2D"]
-texture = ExtResource( 7 )
+[node name="Previous" type="TextureButton" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 9.0
+margin_right = 17.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 16 )
+stretch_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 21.0
+margin_right = 53.0
+margin_bottom = 32.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 11 )
+stretch_mode = 4
+
+[node name="CharacterPortrait" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+frames = ExtResource( 10 )
+centered = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+frames = ExtResource( 13 )
+frame = 1
+centered = false
+script = ExtResource( 19 )
+hatFrame = ExtResource( 20 )
+
+[node name="Next" type="TextureButton" parent="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 57.0
+margin_right = 65.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 15 )
+stretch_mode = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+pause_mode = 2
+visible = false
 margin_top = 112.0
 margin_right = 194.0
 margin_bottom = 144.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomBar"]
 margin_right = 32.0
 margin_bottom = 32.0
 texture = ExtResource( 11 )
 
-[node name="CharacterPortrait" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/HBoxContainer/TextureRect"]
-frames = SubResource( 7 )
+[node name="CharacterPortrait" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/BottomBar/TextureRect"]
+frames = ExtResource( 10 )
 centered = false
 script = ExtResource( 12 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/HBoxContainer/TextureRect/CharacterPortrait"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/BottomBar/TextureRect/CharacterPortrait"]
 anims/Blink = SubResource( 8 )
 anims/BlinkToEvening = SubResource( 9 )
 anims/BlinkToNight = SubResource( 10 )
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HatSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/BottomBar/TextureRect"]
+frames = ExtResource( 13 )
+centered = false
+script = ExtResource( 19 )
+hatFrame = ExtResource( 20 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar"]
 margin_left = 36.0
 margin_right = 194.0
 margin_bottom = 32.0
@@ -706,11 +809,11 @@ custom_constants/margin_right = 0
 custom_constants/margin_left = 0
 custom_constants/margin_bottom = 0
 
-[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" instance=ExtResource( 2 )]
+[node name="NinePatchRect" parent="MarginContainer/VBoxContainer/BottomBar/MarginContainer" instance=ExtResource( 2 )]
 margin_right = 158.0
 margin_bottom = 32.0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar/MarginContainer"]
 margin_right = 158.0
 margin_bottom = 32.0
 custom_constants/margin_right = 3
@@ -718,7 +821,7 @@ custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 custom_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/MarginContainer/MarginContainer"]
 margin_left = 3.0
 margin_top = 9.0
 margin_right = 155.0
@@ -730,6 +833,8 @@ text = "Here go character face?"
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="ateCoins" from="MarginContainer/VBoxContainer/SlotWrapper/CenterContainer/MoneyToucher" to="." method="_on_MoneyToucher_ateCoins"]
-[connection signal="madeCoin" from="MarginContainer/VBoxContainer/SlotWrapper/CenterContainer/MoneyToucher" to="." method="_on_MoneyToucher_madeCoin"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen/MarginContainer/InventoryOpenButton" to="." method="_on_InventoryOpenButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose/MarginContainer/InventoryCloseButton" to="." method="_on_InventoryCloseButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/Previous" to="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3" method="_on_Previous_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3/MarginContainer/VBoxContainer/HBoxContainer/Next" to="MarginContainer/VBoxContainer/ShopUI/VBoxContainer/MarginContainer3" method="_on_Next_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

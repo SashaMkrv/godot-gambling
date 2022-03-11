@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "Resource",
+"class": "PlayerCoinResource",
+"language": "GDScript",
+"path": "res://Scripts/Resources/PlayerCoin.gd"
+}, {
+"base": "Resource",
+"class": "PlayerHat",
+"language": "GDScript",
+"path": "res://Scripts/Resources/PlayerHat.gd"
 } ]
 _global_script_class_icons={
-"GitAPI": ""
+"GitAPI": "",
+"PlayerCoinResource": "",
+"PlayerHat": ""
 }
 
 [application]
@@ -26,7 +38,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-PlayerCoin="*res://Scripts/Globals/PlayerCoin.gd"
 Sounder="*res://Scripts/Globals/Sounder.gd"
 Time="*res://Scripts/Globals/Time.gd"
 

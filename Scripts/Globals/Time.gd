@@ -36,12 +36,23 @@ func calcTimeSlot():
 
 func getTimeString():
 	return "%02d:%02d" % [gameHour, gameMinute]
+func getSeasonString():
+	match gameMonth:
+		0:
+			return "Wn"
+		1:
+			return "Sp"
+		2:
+			return "Sm"
+		3:
+			return "Fl"
+func getDayString():
+	return "%02d" % [gameDay]
 
 
 func tick():
 	gameMinute += 1
 	timeUpdated()
-	
 
 
 func timeUpdated():

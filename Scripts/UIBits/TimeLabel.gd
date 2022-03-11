@@ -10,4 +10,4 @@ func _ready():
 
 
 func updateText():
-	text = time.getTimeString()
+	text = "%s %s %s" % [time.getTimeString(), time.getDayString(), time.getSeasonString()]

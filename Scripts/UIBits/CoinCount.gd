@@ -1,17 +1,19 @@
 extends Label
 
 
-onready var playerCoin = $"/root/PlayerCoin"
 onready var sounder = $"/root/Sounder"
+
+
+export (Resource) var player_coin
 
 
 var previousCoinCount : int
 
 
 func _ready():
-	playerCoin.connect("updateCoinCount", self, "changeCoinCount")
-	changeCoinCountTo(playerCoin.getCoins())
-	previousCoinCount = playerCoin.getCoins()
+	player_coin.connect("updateCoinCount", self, "changeCoinCount")
+	changeCoinCountTo(player_coin.getCoins())
+	previousCoinCount = player_coin.getCoins()
 
 
 func changeCoinCount(oldVal, newVal):
