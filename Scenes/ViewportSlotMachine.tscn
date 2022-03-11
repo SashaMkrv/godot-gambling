@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/SlotController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/coinadding.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scripts/ViewportSlotWrapper.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/ViewportSlotMachine.gd" type="Script" id=12]
 [ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=13]
+[ext_resource path="res://Sprites/Basic3x3w16x16symbolsMachine.png" type="Texture" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -61,40 +62,34 @@ position = Vector2( -50, 0 )
 script = ExtResource( 12 )
 
 [node name="MachineBulk" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -71.5545, -31 )
 scale = Vector2( 1.24076, 1.23308 )
 color = Color( 0.356863, 0.431373, 0.882353, 1 )
 polygon = PoolVector2Array( 62.4096, 25.1403, 57.6697, 77.0429, 58, 243.152, 137, 243.152, 137.459, 76.2319, 132.719, 25.1403 )
 
-[node name="PointerBG" type="Polygon2D" parent="."]
-position = Vector2( -48, -25 )
-color = Color( 0.388235, 0.607843, 1, 1 )
-polygon = PoolVector2Array( 58, 57, 58, 69, 136, 69, 136, 57 )
-
 [node name="ViewportSlotTest" type="Node2D" parent="."]
+position = Vector2( 1, -1 )
 script = ExtResource( 11 )
 
 [node name="ViewportContainer" type="ViewportContainer" parent="ViewportSlotTest"]
-margin_left = 20.0
+margin_left = 19.0
 margin_top = 9.0
-margin_right = 79.0
+margin_right = 78.0
 margin_bottom = 63.0
 mouse_filter = 2
-stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Viewport" type="Viewport" parent="ViewportSlotTest/ViewportContainer"]
-size = Vector2( 58, 54 )
+size = Vector2( 60, 60 )
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
 
 [node name="SlotController" parent="ViewportSlotTest/ViewportContainer/Viewport" instance=ExtResource( 1 )]
-
-[node name="Background" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController" index="0"]
-visible = true
+position = Vector2( 2, 1 )
 
 [node name="Wheel" type="Node2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner" index="0" groups=[
 "wheel",
@@ -104,7 +99,7 @@ __meta__ = {
 "_edit_group_": true
 }
 tilenum = 10
-speed = 56.0
+speed = 59.0
 
 [node name="Tile" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -115,9 +110,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 56
+speed = 59
+tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -129,10 +125,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 1
+speed = 59
+tiletype = 2
 
 [node name="Tile3" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -144,10 +140,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 3
+speed = 59
+tiletype = 9
 
 [node name="Tile4" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -159,10 +155,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 4
+speed = 59
+tiletype = 6
 
 [node name="Tile5" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -174,10 +170,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.53, 0.81, 0.92, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 0
+speed = 59
+tiletype = 3
 
 [node name="Tile6" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -189,10 +185,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 6
+speed = 59
+tiletype = 1
 
 [node name="Tile7" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -204,10 +200,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 1, 1, 0, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 9
+speed = 59
+tiletype = 4
 
 [node name="Tile8" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -219,9 +215,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 56
+speed = 59
 tiletype = 7
 
 [node name="Tile9" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
@@ -234,10 +230,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 2
+speed = 59
 
 [node name="Tile10" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel" groups=[
 "tile",
@@ -249,21 +244,21 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 56
-tiletype = 5
+speed = 59
+tiletype = 0
 
 [node name="Wheel2" type="Node2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner" index="1" groups=[
 "wheel",
 ] instance=ExtResource( 4 )]
-position = Vector2( 20, 0 )
+position = Vector2( 19, 0 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 tilenum = 10
-speed = 54.0
+speed = 55.0
 
 [node name="Tile" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -274,10 +269,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 2
+speed = 55
+tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -289,10 +284,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 5
+speed = 55
+tiletype = 2
 
 [node name="Tile3" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -304,10 +299,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 1
+speed = 55
+tiletype = 7
 
 [node name="Tile4" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -319,9 +314,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 180
-speed = 54
+speed = 55
 tiletype = 0
 
 [node name="Tile5" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
@@ -334,10 +329,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.53, 0.81, 0.92, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 6
+speed = 55
 
 [node name="Tile6" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -349,10 +343,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 9
+speed = 55
+tiletype = 1
 
 [node name="Tile7" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -366,8 +360,8 @@ __meta__ = {
 tilesize = 16
 tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 7
+speed = 55
+tiletype = 9
 
 [node name="Tile8" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -379,10 +373,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.53, 0.81, 0.92, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 4
+speed = 55
+tiletype = 3
 
 [node name="Tile9" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -394,9 +388,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 54
+speed = 55
+tiletype = 4
 
 [node name="Tile10" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel2" groups=[
 "tile",
@@ -408,21 +403,21 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.53, 0.81, 0.92, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 54
-tiletype = 3
+speed = 55
+tiletype = 6
 
 [node name="Wheel3" type="Node2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner" index="2" groups=[
 "wheel",
 ] instance=ExtResource( 4 )]
-position = Vector2( 40, 0 )
+position = Vector2( 38, 0 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 tilenum = 10
-speed = 53.0
+speed = 58.0
 
 [node name="Tile" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -433,9 +428,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 53
+speed = 58
 tiletype = 5
 
 [node name="Tile2" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
@@ -448,10 +443,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 2
+speed = 58
 
 [node name="Tile3" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -463,10 +457,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.53, 0.81, 0.92, 1 )
+tilecolor = Color( 1, 0.84, 0, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 9
+speed = 58
+tiletype = 6
 
 [node name="Tile4" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -478,9 +472,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 180
-speed = 53
+speed = 58
+tiletype = 3
 
 [node name="Tile5" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -492,10 +487,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0, 1, 1, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 3
+speed = 58
+tiletype = 9
 
 [node name="Tile6" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -507,10 +502,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 7
+speed = 58
+tiletype = 2
 
 [node name="Tile7" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -522,10 +517,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 1
+speed = 58
+tiletype = 4
 
 [node name="Tile8" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -537,10 +532,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0.53, 0.81, 0.92, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 6
+speed = 58
+tiletype = 0
 
 [node name="Tile9" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -552,10 +547,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 0.96, 0.64, 0.38, 1 )
+tilecolor = Color( 0.56, 0.74, 0.56, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 4
+speed = 58
+tiletype = 1
 
 [node name="Tile10" type="KinematicBody2D" parent="ViewportSlotTest/ViewportContainer/Viewport/SlotController/SlotSpinner/Wheel3" groups=[
 "tile",
@@ -567,26 +562,37 @@ __meta__ = {
 "_edit_vertical_guides_": [ 10.0183 ]
 }
 tilesize = 16
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 180
-speed = 53
-tiletype = 0
+speed = 58
+tiletype = 7
 
 [node name="Camera2D" type="Camera2D" parent="ViewportSlotTest/ViewportContainer/Viewport"]
 offset = Vector2( 100, 100 )
 zoom = Vector2( 0.5, 0.5 )
 
-[node name="LeftPointer" type="Polygon2D" parent="ViewportSlotTest"]
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_top = -2.0
+margin_right = 94.0
+margin_bottom = 237.0
+mouse_filter = 2
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftPointer" type="Polygon2D" parent="."]
 position = Vector2( -41, -26 )
 polygon = PoolVector2Array( 53, 61, 53, 67, 59, 64 )
 
-[node name="RightPointer" type="Polygon2D" parent="ViewportSlotTest"]
+[node name="RightPointer" type="Polygon2D" parent="."]
 position = Vector2( 33, -26 )
 color = Color( 0.913725, 0.945098, 0.972549, 1 )
 polygon = PoolVector2Array( 53, 61, 53, 67, 47, 64 )
 
 [node name="ControlWrapper" type="Node2D" parent="."]
-position = Vector2( 23, 64 )
+position = Vector2( 22, 70 )
 
 [node name="CoinBg" type="Polygon2D" parent="ControlWrapper"]
 position = Vector2( -20, -58 )

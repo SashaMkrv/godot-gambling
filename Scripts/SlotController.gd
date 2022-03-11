@@ -3,11 +3,27 @@ extends Node2D
 signal slots_stopped(tiles)
 signal slots_started()
 
+tool
+
 var winningTiles := []
 var spinCoinCount := 0
 
+export (int) var wheelNum := 3 setget updateWheelNum
+export (int) var tileNum := 10 setget updateTileNum
+
+
 func _ready():
 	pass
+
+
+func updateWheelNum(newVal):
+	wheelNum = newVal
+	$SlotSpinner.wheelnum = wheelNum
+
+
+func updateTileNum(newVal):
+	tileNum = newVal
+	$SlotSpinner.tilenum = tileNum
 
 
 func interact(coinCount: int):
