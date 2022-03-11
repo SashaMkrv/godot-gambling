@@ -1,11 +1,11 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/GodUI.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/NinePatchRectPurpleWhite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ViewportSlotMachine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/CoinCountUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/SoundHolder.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/light.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/ViewportSlotMachine5x3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/twocoinsicon.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/filthyarcadecarpet32x32.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/UIBits/TimeLabel.gd" type="Script" id=9]
@@ -32,12 +32,6 @@ font_data = ExtResource( 22 )
 
 [sub_resource type="Theme" id=12]
 default_font = SubResource( 11 )
-
-[sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 48, 128, 51, 0, 145, 1, 147, 127, 149, 268, 49, 268 )
-
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 65, -19, 64, -6, 129, -6, 128, -18 )
 
 [sub_resource type="Animation" id=8]
 resource_name = "Blink"
@@ -239,21 +233,23 @@ size_flags_vertical = 3
 [node name="MoneyToucher" parent="MarginContainer/VBoxContainer/SlotWrapper/CenterContainer" instance=ExtResource( 3 )]
 player_coin = ExtResource( 21 )
 
-[node name="Light2D" type="Light2D" parent="MarginContainer/VBoxContainer/SlotWrapper"]
+[node name="BigSlotWrapper" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 visible = false
-position = Vector2( 99, -85 )
-texture = ExtResource( 6 )
-color = Color( 0.992157, 0.14902, 1, 1 )
-energy = 1.75
-shadow_enabled = true
+margin_top = 26.0
+margin_right = 194.0
+margin_bottom = 42.0
+mouse_filter = 2
+size_flags_vertical = 3
+alignment = 1
 
-[node name="machineshadow" type="LightOccluder2D" parent="MarginContainer/VBoxContainer/SlotWrapper"]
-visible = false
-occluder = SubResource( 2 )
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/BigSlotWrapper"]
+margin_left = 97.0
+margin_right = 97.0
+margin_bottom = 16.0
+mouse_filter = 2
+size_flags_vertical = 3
 
-[node name="coinshadow" type="LightOccluder2D" parent="MarginContainer/VBoxContainer/SlotWrapper"]
-visible = false
-occluder = SubResource( 3 )
+[node name="MoneyToucher" parent="MarginContainer/VBoxContainer/BigSlotWrapper/CenterContainer" instance=ExtResource( 6 )]
 
 [node name="ShopUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2

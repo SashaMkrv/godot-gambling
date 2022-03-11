@@ -19,14 +19,14 @@ var currentspeed: int = 0
 var bottom: int = (tilesize + tilepadding) * tilenum
 
 var randomColors = [
-	Color.yellow,
 	Color.gold,
 	Color.darkseagreen,
 	Color.sandybrown,
 	Color.yellowgreen,
 	Color.aqua,
-	Color.skyblue,
 	Color.plum,
+	Color.orange,
+	Color.orchid
 ]
 
 var tileScene = preload("res://Scenes/Tile.tscn")

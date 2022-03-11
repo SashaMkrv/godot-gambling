@@ -27,7 +27,7 @@ func openSlots():
 	get_tree().paused = false
 	$Timer.paused = false
 	$MarginContainer/VBoxContainer/BottomBar.visible = true
-	$MarginContainer/VBoxContainer/SlotWrapper.visible = true
+	$MarginContainer/VBoxContainer/BigSlotWrapper.visible = true
 	$MarginContainer/VBoxContainer/ShopUI.visible = false
 	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose.visible = false
 	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen.visible = true
@@ -37,7 +37,7 @@ func openInventory():
 	get_tree().paused = true
 	$Timer.paused = true
 	$MarginContainer/VBoxContainer/BottomBar.visible = false
-	$MarginContainer/VBoxContainer/SlotWrapper.visible = false
+	$MarginContainer/VBoxContainer/BigSlotWrapper.visible = false
 	$MarginContainer/VBoxContainer/ShopUI.visible = true
 	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose.visible = true
 	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen.visible = false
