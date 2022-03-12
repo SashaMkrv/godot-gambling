@@ -81,6 +81,7 @@ func getWheels():
 func createWheels():
 	for i in wheelnum:
 		createWheel()
+	randomizeWheelSpeeds()
 
 
 func createWheel():
@@ -99,8 +100,6 @@ func instantiateAndMove():
 	wheel.tilesize = tilesize
 	wheel.tilenum = tilenum
 	wheel.tilepadding = tilepadding
-	
-	wheel.speed = 50 + (randi() % 20)
 	
 	wheel.position.x = wheels.size() * (tilesize + wheelpadding)
 	
@@ -165,7 +164,7 @@ func wheelCompletedStop():
 
 func randomizeWheelSpeeds():
 	for wheel in get_wheels():
-		wheel.speed = 50 + (randi() % 20)
+		wheel.speed = 20 + (randi() % 10)
 
 func getTiles():
 	var tiles := []

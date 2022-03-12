@@ -39,7 +39,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 132
 speed = 25
 tiletype = 4
@@ -53,10 +53,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 2
+tiletype = 9
 
 [node name="Tile4" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -67,10 +67,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 1, 0.84, 0, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 5
+tiletype = 10
 
 [node name="Tile5" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -81,9 +81,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.85, 0.44, 0.84, 1 )
 maxdistance = 132
 speed = 25
+tiletype = 1
 
 [node name="Tile6" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -94,10 +95,9 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 0.6, 0.8, 0.2, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 6
 
 [node name="Tile7" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -108,10 +108,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 10
+tiletype = 5
 
 [node name="Tile8" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -122,7 +122,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 1, 1, 0, 1 )
+tilecolor = Color( 0, 1, 1, 1 )
 maxdistance = 132
 speed = 25
 tiletype = 0
@@ -136,10 +136,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.6, 0.8, 0.2, 1 )
+tilecolor = Color( 0.87, 0.63, 0.87, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 9
+tiletype = 2
 
 [node name="Tile10" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -150,10 +150,10 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.56, 0.74, 0.56, 1 )
+tilecolor = Color( 0.85, 0.44, 0.84, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 7
+tiletype = 6
 
 [node name="Tile11" type="KinematicBody2D" parent="." groups=[
 "tile",
@@ -164,9 +164,9 @@ __meta__ = {
 "_edit_horizontal_guides_": [ -0.443138 ],
 "_edit_vertical_guides_": [ 10.0183 ]
 }
-tilecolor = Color( 0.87, 0.63, 0.87, 1 )
+tilecolor = Color( 0.85, 0.44, 0.84, 1 )
 maxdistance = 132
 speed = 25
-tiletype = 1
+tiletype = 7
 
 [connection signal="tween_completed" from="Tween" to="." method="autoupdateState"]

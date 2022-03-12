@@ -10,7 +10,7 @@ var ready := false
 export(int, 1, 100) var tilesize := 16 setget tileSizeUpdate
 export(int, 3, 100) var tilenum := 12 setget tileNumUpdate
 export(int, 0, 100) var tilepadding := 2 setget tilePaddingUpdate
-export(int, 5, 1000) var speed = 30 setget speedUpdate
+export(int, 5, 1000) var speed = 5 setget speedUpdate
 
 enum States {MOVING, STILL, START, SLOW}
 var state = States.STILL setget updateState
@@ -167,7 +167,9 @@ func moveTiles():
 	
 	for i in tiles.size():
 		var tile = tiles[-i -1]
-		tile.position.y += currentspeed * 0.03
+#		tile.position.y += currentspeed * 0.03
+		tile.position.y += currentspeed * 0.1
+#		print("move by " + String(currentspeed))
 		if tile.position.y > bottom:
 			tile.position.y = previousTile.position.y - tilesize - tilepadding
 		previousTile = tile
