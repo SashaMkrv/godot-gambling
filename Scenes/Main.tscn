@@ -27,17 +27,17 @@
 [ext_resource path="res://Sprites/OutlineishSprite.tres" type="Material" id=25]
 [ext_resource path="res://Sprites/conceptTopishDownishMockup.png" type="Texture" id=26]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 1
 outline_color = Color( 0.219608, 0.298039, 0.317647, 1 )
 extra_spacing_top = -5
 extra_spacing_space = -1
 font_data = ExtResource( 22 )
 
-[sub_resource type="Theme" id=12]
-default_font = SubResource( 11 )
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 resource_name = "Blink"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ 2, 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 resource_name = "BlinkToEvening"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ 2, 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=5]
 resource_name = "BlinkToNight"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -82,31 +82,31 @@ tracks/0/keys = {
 "values": [ 2, 1, 2 ]
 }
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 24 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 24 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 24 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 24 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=17]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=11]
 resource_name = "Blink"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -121,7 +121,7 @@ tracks/0/keys = {
 "values": [ 2, 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=12]
 resource_name = "BlinkToEvening"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -136,7 +136,7 @@ tracks/0/keys = {
 "values": [ 2, 1, 2, 0 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=13]
 resource_name = "BlinkToNight"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -155,7 +155,7 @@ tracks/0/keys = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme = SubResource( 12 )
+theme = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -172,15 +172,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="HeresTheMap" type="CenterContainer" parent="."]
+visible = false
 margin_left = 80.0
 margin_top = 29.0
 margin_right = 80.0
 margin_bottom = 111.0
 mouse_filter = 2
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Sprite" type="Sprite" parent="CenterContainer"]
+[node name="Sprite" type="Sprite" parent="HeresTheMap"]
 material = ExtResource( 25 )
 position = Vector2( 113, 45 )
 texture = ExtResource( 26 )
@@ -200,14 +204,14 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
-margin_right = 158.0
+margin_right = 157.0
 margin_bottom = 147.0
 mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="TopBarStatsUI" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2
-margin_right = 155.0
+margin_right = 154.0
 margin_bottom = 22.0
 mouse_filter = 2
 size_flags_horizontal = 3
@@ -307,18 +311,17 @@ texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 18 )
 
 [node name="SlotWrapper" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 margin_top = 26.0
-margin_right = 194.0
-margin_bottom = 42.0
+margin_right = 154.0
+margin_bottom = 108.0
 mouse_filter = 2
 size_flags_vertical = 3
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/SlotWrapper"]
-margin_left = 97.0
-margin_right = 97.0
-margin_bottom = 16.0
+margin_left = 77.0
+margin_right = 77.0
+margin_bottom = 82.0
 mouse_filter = 2
 size_flags_vertical = 3
 
@@ -939,14 +942,15 @@ autowrap = true
 
 [node name="BottomBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 pause_mode = 2
-margin_top = 26.0
-margin_right = 155.0
-margin_bottom = 58.0
+margin_top = 112.0
+margin_right = 154.0
+margin_bottom = 144.0
 
 [node name="PlayerCharacterPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomBar"]
 margin_right = 32.0
 margin_bottom = 32.0
-texture = ExtResource( 11 )
+texture = ExtResource( 23 )
+flip_h = true
 
 [node name="CharacterPortrait" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/BottomBar/PlayerCharacterPortrait"]
 frames = ExtResource( 10 )
@@ -954,9 +958,9 @@ centered = false
 script = ExtResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/BottomBar/PlayerCharacterPortrait/CharacterPortrait"]
-anims/Blink = SubResource( 8 )
-anims/BlinkToEvening = SubResource( 9 )
-anims/BlinkToNight = SubResource( 10 )
+anims/Blink = SubResource( 3 )
+anims/BlinkToEvening = SubResource( 4 )
+anims/BlinkToNight = SubResource( 5 )
 
 [node name="HatSprite" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/BottomBar/PlayerCharacterPortrait"]
 frames = ExtResource( 13 )
@@ -966,14 +970,14 @@ hatFrame = ExtResource( 20 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/BottomBar"]
 margin_left = 36.0
-margin_right = 119.0
+margin_right = 118.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer"]
 margin_top = 7.0
-margin_right = 83.0
+margin_right = 82.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 0
@@ -982,11 +986,11 @@ custom_constants/margin_left = 0
 custom_constants/margin_bottom = 0
 
 [node name="NinePatchRect" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer/MarginContainer2" instance=ExtResource( 2 )]
-margin_right = 83.0
+margin_right = 82.0
 margin_bottom = 25.0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer/MarginContainer2"]
-margin_right = 83.0
+margin_right = 82.0
 margin_bottom = 25.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 4
@@ -999,25 +1003,25 @@ __meta__ = {
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/BottomBar/VBoxContainer/MarginContainer2/MarginContainer"]
 margin_left = 5.0
 margin_top = 4.0
-margin_right = 78.0
+margin_right = 77.0
 margin_bottom = 23.0
 text = "lol, what house edge?"
 autowrap = true
 
 [node name="OtherCharacterPortrait" type="TextureRect" parent="MarginContainer/VBoxContainer/BottomBar"]
-margin_left = 123.0
-margin_right = 155.0
+margin_left = 122.0
+margin_right = 154.0
 margin_bottom = 32.0
 texture = ExtResource( 23 )
 
 [node name="CharacterPortrait" type="AnimatedSprite" parent="MarginContainer/VBoxContainer/BottomBar/OtherCharacterPortrait"]
-frames = SubResource( 17 )
+frames = SubResource( 10 )
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/VBoxContainer/BottomBar/OtherCharacterPortrait/CharacterPortrait"]
-anims/Blink = SubResource( 18 )
-anims/BlinkToEvening = SubResource( 19 )
-anims/BlinkToNight = SubResource( 20 )
+anims/Blink = SubResource( 11 )
+anims/BlinkToEvening = SubResource( 12 )
+anims/BlinkToNight = SubResource( 13 )
 
 [node name="Sounds" parent="." instance=ExtResource( 5 )]
 

@@ -1,0 +1,181 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Sprites/OutlineShader.gdshader" type="Shader" id=1]
+[ext_resource path="res://Scripts/TopDownBits/PlayerMovement.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Player2FrameActioning.png" type="Texture" id=3]
+
+[sub_resource type="ShaderMaterial" id=26]
+shader = ExtResource( 1 )
+shader_param/on = true
+shader_param/color = Color( 0.615686, 0.811765, 0.882353, 1 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 16, 32 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 5, 2 )
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "LeftIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "RightIdle"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=14]
+blend_point_0/node = SubResource( 12 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 13 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "LeftWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "RightWalk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id=23]
+blend_point_0/node = SubResource( 21 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 22 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Idle/node = SubResource( 14 )
+states/Idle/position = Vector2( 175, 126 )
+states/Walk/node = SubResource( 23 )
+states/Walk/position = Vector2( 427, 126 )
+transitions = [ "Idle", "Walk", SubResource( 24 ), "Walk", "Idle", SubResource( 25 ) ]
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+
+[sub_resource type="Animation" id=38]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=40]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=41]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 7 ]
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 26 )
+frames = SubResource( 35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 13 )
+shape = SubResource( 36 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 37 )
+parameters/Idle/blend_position = -0.000913262
+parameters/Walk/blend_position = -0.00639272
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite")
+anims/LeftIdle = SubResource( 38 )
+anims/LeftWalk = SubResource( 39 )
+anims/RightIdle = SubResource( 40 )
+anims/RightWalk = SubResource( 41 )
