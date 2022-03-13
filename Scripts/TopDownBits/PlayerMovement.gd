@@ -19,11 +19,11 @@ func get_input():
 	# if this were 3.4, we'd be able to just use Input.get_vector
 	
 	if velocity != Vector2.ZERO:
-		$AnimationTree.set("parameters/Idle/blend_position", velocity.x)
-		$AnimationTree.set("parameters/Walk/blend_position", velocity.x)
-		animationState.travel("Walk")
+		$AnimationTree.set("parameters/Idle2/blend_position", velocity)
+		$AnimationTree.set("parameters/Walk2/blend_position", velocity)
+		animationState.travel("Walk2")
 	else:
-		animationState.travel("Idle")
+		animationState.travel("Idle2")
 	
 	velocity = velocity.normalized() * speed
 

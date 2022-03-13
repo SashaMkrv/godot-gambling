@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Sprites/OutlineShader.gdshader" type="Shader" id=1]
 [ext_resource path="res://Scripts/TopDownBits/PlayerMovement.gd" type="Script" id=2]
@@ -41,9 +41,41 @@ region = Rect2( 96, 0, 16, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 112, 0, 16, 32 )
 
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 3 )
+region = Rect2( 160, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 3 )
+region = Rect2( 176, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 3 )
+region = Rect2( 208, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 3 )
+region = Rect2( 224, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 16, 32 )
+
 [sub_resource type="SpriteFrames" id=35]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -64,6 +96,28 @@ blend_point_0/pos = -1.0
 blend_point_1/node = SubResource( 13 )
 blend_point_1/pos = 1.0
 
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "LeftIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "RightIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "FrontIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "BackIdle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=58]
+blend_point_0/node = SubResource( 54 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 55 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 56 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 57 )
+blend_point_3/pos = Vector2( 0, -1 )
+
 [sub_resource type="AnimationNodeAnimation" id=21]
 animation = "LeftWalk"
 
@@ -76,19 +130,118 @@ blend_point_0/pos = -1.0
 blend_point_1/node = SubResource( 22 )
 blend_point_1/pos = 1.0
 
+[sub_resource type="AnimationNodeAnimation" id=59]
+animation = "LeftWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "RightWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=61]
+animation = "BackWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=62]
+animation = "FrontWalk"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=63]
+blend_point_0/node = SubResource( 59 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 60 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 61 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 62 )
+blend_point_3/pos = Vector2( 0, 1 )
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=64]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+
 [sub_resource type="AnimationNodeStateMachine" id=15]
 states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 175, 126 )
+states/Idle2/node = SubResource( 58 )
+states/Idle2/position = Vector2( 628, 129 )
 states/Walk/node = SubResource( 23 )
 states/Walk/position = Vector2( 427, 126 )
-transitions = [ "Idle", "Walk", SubResource( 24 ), "Walk", "Idle", SubResource( 25 ) ]
-start_node = "Idle"
+states/Walk2/node = SubResource( 63 )
+states/Walk2/position = Vector2( 838, 129 )
+transitions = [ "Idle", "Walk", SubResource( 24 ), "Walk", "Idle", SubResource( 25 ), "Idle2", "Walk2", SubResource( 64 ), "Walk2", "Idle2", SubResource( 65 ) ]
+start_node = "Idle2"
+graph_offset = Vector2( 164, 13 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+
+[sub_resource type="Animation" id=50]
+resource_name = "BackIdle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 11 ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "BackWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 12, 13 ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "FrontIdle"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 8, 9 ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "FrontWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 14, 15 ]
+}
 
 [sub_resource type="Animation" id=38]
 length = 0.4
@@ -160,6 +313,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 26 )
 frames = SubResource( 35 )
+frame = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 13 )
@@ -171,10 +325,16 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 37 )
 parameters/Idle/blend_position = -0.000913262
+parameters/Idle2/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = -0.00639272
+parameters/Walk2/blend_position = Vector2( 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
+anims/BackIdle = SubResource( 50 )
+anims/BackWalk = SubResource( 51 )
+anims/FrontIdle = SubResource( 52 )
+anims/FrontWalk = SubResource( 53 )
 anims/LeftIdle = SubResource( 38 )
 anims/LeftWalk = SubResource( 39 )
 anims/RightIdle = SubResource( 40 )
