@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/OutlineShader.gdshader" type="Shader" id=1]
 [ext_resource path="res://Sprites/MapSprites/slotmachineviews.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/TopDownBits/PhysicalSlotMachine.gd" type="Script" id=3]
 [ext_resource path="res://Resources/DefaultGameState.tres" type="Resource" id=4]
+[ext_resource path="res://Scenes/ViewportSlotMachine.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
@@ -76,6 +77,7 @@ extents = Vector2( 8, 7 )
 material = SubResource( 1 )
 script = ExtResource( 3 )
 gameState = ExtResource( 4 )
+gameScene = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 use_parent_material = true

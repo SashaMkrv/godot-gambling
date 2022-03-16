@@ -2,6 +2,7 @@ extends Node2D
 
 
 export (Resource) var gameState
+export (Resource) var gameScene
 
 
 var playerInVicinity := false
@@ -9,7 +10,7 @@ var playerInVicinity := false
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("ui_accept") and playerInVicinity:
-		gameState.changeStateToGame() # ok this is going to be weird with adding blackjack. this game state system is already borked for any interaction!!! incredible. I am sad all around.
+		gameState.changeStateToGameWithGame(gameScene) # ok this is going to be weird with adding blackjack. this game state system is already borked for any interaction!!! incredible. I am sad all around.
 
 
 

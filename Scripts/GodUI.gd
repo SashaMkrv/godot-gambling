@@ -42,6 +42,9 @@ func openMove():
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_open_close_inventory"):
 		gameState.toggleState("Inventory")
+	if event.is_action_pressed("ui_cancel"):
+		if gameState.currentState == "Game":
+			gameState.tryMoveDownStateIfCurrentStateIs("Game")
 	
 
 func _on_InventoryOpenButton_pressed():

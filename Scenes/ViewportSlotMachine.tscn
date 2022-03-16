@@ -58,6 +58,7 @@ animations = [ {
 radius = 7.0
 
 [node name="MoneyToucher" type="Node2D"]
+process_priority = 1
 position = Vector2( -50, 0 )
 script = ExtResource( 12 )
 

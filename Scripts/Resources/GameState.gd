@@ -3,6 +3,8 @@ class_name GameState
 
 
 signal stateChanged(state)
+signal gameClosed()
+signal gameOpened(resource)
 # So, this basically sets the Base App. You set current state to this, and the state stack gets nerfed
 # if you purge with a new state later, then that new thing becomes the new Base App
 export (String) var startingMode := "Move"
@@ -46,12 +48,15 @@ func tryMoveDownStateIfCurrentStateIs(tryState):
 
 
 func purgeStackWith(newState):
+	if currentStateStack.has("Game"):
+		emit_signal("gameClosed")
 	currentStateStack = []
 	tryChangeStateTo(newState)
 
 
 func currentStateChanged(newVal: String):
 	if currentState != newVal:
+		var gameIncluded = currentStateStack.has("Game")
 		if newVal in currentStateStack:
 			print("scraping game state stack until we get to ", newVal)
 			var index = currentStateStack.find_last(newVal)
@@ -63,6 +68,8 @@ func currentStateChanged(newVal: String):
 		currentState = newVal
 		emit_signal("stateChanged", currentState)
 		print("state stack is now ", PoolStringArray(currentStateStack).join(", "))
+		if gameIncluded and not currentStateStack.has("Game"):
+			emit_signal("gameClosed")
 	else:
 		print("state was already ", newVal)
 
@@ -70,6 +77,12 @@ func currentStateChanged(newVal: String):
 func changeStateTo(state: String):
 	print("Maybe do not use this method. please. thank you. will try to change state to ", state, " anyways.")
 	tryChangeStateTo(state)
+
+
+func changeStateToGameWithGame(gameScene: Resource):
+	changeStateToGame()
+	if currentState == "Game":
+		emit_signal("gameOpened", gameScene)
 
 
 func changeStateToGame():
