@@ -308,7 +308,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 2, 9 )
+extents = Vector2( 2, 4 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -317,7 +317,7 @@ script = ExtResource( 2 )
 material = SubResource( 1 )
 position = Vector2( 0, -32 )
 frames = SubResource( 18 )
-frame = 10
+frame = 11
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -351,5 +351,5 @@ anims/RightWalk = SubResource( 49 )
 position = Vector2( 8, -4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, -6 )
+position = Vector2( 0, -3 )
 shape = SubResource( 50 )
