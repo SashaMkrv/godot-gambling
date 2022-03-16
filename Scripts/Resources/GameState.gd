@@ -15,6 +15,16 @@ func _init():
 	tryChangeStateTo(startingMode)
 
 
+func toggleState(state):
+	print("toggling to state: ", state)
+	if currentState == state:
+		print("current state is toggled state, trying to exit")
+		tryMoveDownState()
+	else:
+		print("current state is not toggled state, trying to add")
+		tryChangeStateTo(state)
+
+
 func tryChangeStateTo(newVal):
 	print("trying to change state to: ", newVal)
 	currentStateChanged(newVal)

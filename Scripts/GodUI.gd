@@ -44,6 +44,11 @@ func openMove():
 	$Timer.paused = false
 
 
+func _input(event):
+	if event.is_action("ui_open_close_inventory"):
+		gameState.toggleState("Inventory")
+	
+
 func _on_InventoryOpenButton_pressed():
 	gameState.changeStateToInventory()
 
