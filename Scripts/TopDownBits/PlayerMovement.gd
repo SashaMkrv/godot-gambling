@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 onready var animationTree = $AnimationTree
+onready var area2D = $Area2D
 onready var animationState = animationTree.get("parameters/playback")
 
 var speed = 100  # speed in pixels/sec
@@ -22,6 +23,8 @@ func get_input():
 		$AnimationTree.set("parameters/Idle2/blend_position", velocity)
 		$AnimationTree.set("parameters/Walk2/blend_position", velocity)
 		animationState.travel("Walk2")
+		var angle = velocity.angle_to(Vector2.UP)
+		area2D.rotation = angle
 	else:
 		animationState.travel("Idle2")
 	

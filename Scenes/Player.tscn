@@ -82,18 +82,18 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 5, 2 )
+extents = Vector2( 5, 3 )
 
 [sub_resource type="AnimationNodeAnimation" id=20]
 animation = "LeftIdle"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=51]
 animation = "RightIdle"
 
-[sub_resource type="AnimationNodeBlendSpace1D" id=22]
+[sub_resource type="AnimationNodeBlendSpace1D" id=52]
 blend_point_0/node = SubResource( 20 )
 blend_point_0/pos = -1.0
-blend_point_1/node = SubResource( 21 )
+blend_point_1/node = SubResource( 51 )
 blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeAnimation" id=23]
@@ -154,14 +154,14 @@ blend_point_3/pos = Vector2( 0, 1 )
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
 
-[sub_resource type="AnimationNodeStateMachine" id=40]
-states/Idle/node = SubResource( 22 )
+[sub_resource type="AnimationNodeStateMachine" id=56]
+states/Idle/node = SubResource( 52 )
 states/Idle/position = Vector2( 175, 126 )
 states/Idle2/node = SubResource( 27 )
 states/Idle2/position = Vector2( 628, 129 )
@@ -169,11 +169,11 @@ states/Walk/node = SubResource( 30 )
 states/Walk/position = Vector2( 427, 126 )
 states/Walk2/node = SubResource( 35 )
 states/Walk2/position = Vector2( 838, 129 )
-transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ), "Idle2", "Walk2", SubResource( 38 ), "Walk2", "Idle2", SubResource( 39 ) ]
+transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 53 ), "Idle2", "Walk2", SubResource( 54 ), "Walk2", "Idle2", SubResource( 55 ) ]
 start_node = "Idle2"
 graph_offset = Vector2( 164, 13 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=41]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=57]
 
 [sub_resource type="Animation" id=42]
 resource_name = "BackIdle"
@@ -308,25 +308,27 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=50]
-extents = Vector2( 8, 7 )
+extents = Vector2( 2, 9 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 1 )
+position = Vector2( 0, -32 )
 frames = SubResource( 18 )
-frame = 11
+frame = 10
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 13 )
+position = Vector2( 8, -3 )
 shape = SubResource( 19 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 40 )
+tree_root = SubResource( 56 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 41 )
+parameters/playback = SubResource( 57 )
 parameters/Idle/blend_position = -0.000913262
 parameters/Idle2/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = -0.00639272
@@ -346,7 +348,8 @@ anims/RightWalk = SubResource( 49 )
 [node name="Area2D" type="Area2D" parent="." groups=[
 "player",
 ]]
+position = Vector2( 8, -4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0, 9 )
+position = Vector2( 0, -6 )
 shape = SubResource( 50 )
