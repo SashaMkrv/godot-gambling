@@ -5,7 +5,6 @@ export (Resource) var gameState
 onready var time := $"/root/Time"
 
 func _ready():
-	
 	gameState.connect("stateChanged", self, "gameStateChanged")
 
 
@@ -28,24 +27,20 @@ func _on_Timer_timeout():
 func openSlots():
 	get_tree().paused = false
 	$HeresTheMap.visible = false
-	$Timer.paused = false
-
 
 
 func openInventory():
 	get_tree().paused = true
 	$HeresTheMap.visible = false
-	$Timer.paused = true
 
 
 func openMove():
 	get_tree().paused = false
 	$HeresTheMap.visible = true
-	$Timer.paused = false
 
 
-func _input(event):
-	if event.is_action("ui_open_close_inventory"):
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_open_close_inventory"):
 		gameState.toggleState("Inventory")
 	
 

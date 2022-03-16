@@ -143,6 +143,7 @@ tracks/0/keys = {
 }
 
 [node name="GodUI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -323,6 +324,7 @@ texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 18 )
 
 [node name="SlotVis" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" instance=ExtResource( 26 )]
+visible = false
 margin_top = 26.0
 margin_right = 154.0
 margin_bottom = 108.0
@@ -367,10 +369,9 @@ size_flags_vertical = 3
 [node name="MoneyToucher" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/BigSlotWrapper/CenterContainer" instance=ExtResource( 6 )]
 
 [node name="MovementVis" parent="CanvasLayer/Control/MarginContainer/VBoxContainer" instance=ExtResource( 26 )]
-visible = false
 margin_top = 26.0
-margin_right = 155.0
-margin_bottom = 26.0
+margin_right = 154.0
+margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 showDuringGame = false
@@ -378,7 +379,8 @@ showDuringInventory = false
 showDuringShop = false
 
 [node name="MovementVisibilityWrapper" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/MovementVis"]
-margin_right = 155.0
+margin_right = 154.0
+margin_bottom = 82.0
 mouse_filter = 2
 size_flags_vertical = 3
 alignment = 1

@@ -7,8 +7,8 @@ export (Resource) var gameState
 var playerInVicinity := false
 
 
-func _input(event: InputEvent):
-	if event.is_action("ui_accept") and playerInVicinity:
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("ui_accept") and playerInVicinity:
 		gameState.changeStateToGame() # ok this is going to be weird with adding blackjack. this game state system is already borked for any interaction!!! incredible. I am sad all around.
 
 
