@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/KineTile.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/SlotSymbols.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SlotComponents/SlotSymbols.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/OutlineishSprite.tres" type="Material" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]

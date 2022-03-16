@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bigredbutton16x16x2.png-a9a70197cc0d918e5f21585314be46e7.stex"
+path="res://.import/coinadding.png-71ead9267af677b0711e8669a5e92977.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bigredbutton16x16x2.png"
-dest_files=[ "res://.import/bigredbutton16x16x2.png-a9a70197cc0d918e5f21585314be46e7.stex" ]
+source_file="res://Sprites/SlotComponents/coinadding.png"
+dest_files=[ "res://.import/coinadding.png-71ead9267af677b0711e8669a5e92977.stex" ]
 
 [params]
 

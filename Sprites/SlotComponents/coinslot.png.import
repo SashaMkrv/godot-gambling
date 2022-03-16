@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coinslot.png-8219ca240a3a75ba7fbc4b4d698f790a.stex"
+path="res://.import/coinslot.png-c9dafcd7e2b5fe953a38505d8b85375e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/coinslot.png"
-dest_files=[ "res://.import/coinslot.png-8219ca240a3a75ba7fbc4b4d698f790a.stex" ]
+source_file="res://Sprites/SlotComponents/coinslot.png"
+dest_files=[ "res://.import/coinslot.png-c9dafcd7e2b5fe953a38505d8b85375e.stex" ]
 
 [params]
 

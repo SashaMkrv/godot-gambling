@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Basic5x3w16x16symbolsMachine.png-9ca78d140d91cf08a7e0e3c875584cc9.stex"
+path="res://.import/Basic3x3w16x16symbolsMachine.png-2b38e095be191469cf30a71e4c95d5b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Basic5x3w16x16symbolsMachine.png"
-dest_files=[ "res://.import/Basic5x3w16x16symbolsMachine.png-9ca78d140d91cf08a7e0e3c875584cc9.stex" ]
+source_file="res://Sprites/SlotComponents/Basic3x3w16x16symbolsMachine.png"
+dest_files=[ "res://.import/Basic3x3w16x16symbolsMachine.png-2b38e095be191469cf30a71e4c95d5b3.stex" ]
 
 [params]
 

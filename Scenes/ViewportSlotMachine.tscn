@@ -1,19 +1,19 @@
 [gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/SlotController.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/coinadding.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/SlotComponents/coinadding.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Tile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Wheel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/KineTile.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Wheel.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/coinslot.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/bigredbutton16x16x2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/SlotComponents/coinslot.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/SlotComponents/bigredbutton16x16x2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/UIBits/BigButton.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/UIBits/CoinAdding.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/ViewportSlotWrapper.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/ViewportSlotMachine.gd" type="Script" id=12]
 [ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=13]
-[ext_resource path="res://Sprites/Basic3x3w16x16symbolsMachine.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/SlotComponents/Basic3x3w16x16symbolsMachine.png" type="Texture" id=14]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
