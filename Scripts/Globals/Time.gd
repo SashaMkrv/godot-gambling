@@ -7,7 +7,7 @@ signal isMorning
 signal isAfternoon
 
 var gameYear := 1
-var gameMonth := 1
+var gameMonth := 0
 var gameDay := 1
 var gameHour := 11
 var gameMinute := 50
@@ -39,13 +39,13 @@ func getTimeString():
 func getSeasonString():
 	match gameMonth:
 		0:
-			return "Wn"
-		1:
 			return "Sp"
+		1:
+			return "Su"
 		2:
-			return "Sm"
+			return "Fa"
 		3:
-			return "Fl"
+			return "Wn"
 func getDayString():
 	return "%02d" % [gameDay]
 

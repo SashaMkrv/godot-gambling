@@ -9,7 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "EditorVCSInterface",
+"base": "Resource",
+"class": "GameState",
+"language": "GDScript",
+"path": "res://Scripts/Resources/GameState.gd"
+}, {
+"base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://Scripts/Resources/PlayerHat.gd"
 } ]
 _global_script_class_icons={
+"GameState": "",
 "GitAPI": "",
 "PlayerCoinResource": "",
 "PlayerHat": ""

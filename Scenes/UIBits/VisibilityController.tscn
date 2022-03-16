@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/DefaultGameState.tres" type="Resource" id=1]
+[ext_resource path="res://Scripts/VisibilityController.gd" type="Script" id=2]
+
+[node name="VisibilityController" type="MarginContainer"]
+margin_top = 144.0
+margin_right = 167.0
+margin_bottom = 144.0
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gameState = ExtResource( 1 )

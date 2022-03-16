@@ -1,181 +1,181 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Sprites/OutlineShader.gdshader" type="Shader" id=1]
 [ext_resource path="res://Scripts/TopDownBits/PlayerMovement.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Player2FrameActioning.png" type="Texture" id=3]
 
-[sub_resource type="ShaderMaterial" id=26]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/on = true
-shader_param/color = Color( 0.615686, 0.811765, 0.882353, 1 )
+shader_param/color = Color( 0.615686, 0.811765, 0.882353, 0.627451 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 16, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 80, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
 region = Rect2( 112, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 144, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 160, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 176, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
 region = Rect2( 208, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 3 )
 region = Rect2( 224, 0, 16, 32 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 3 )
 region = Rect2( 240, 0, 16, 32 )
 
-[sub_resource type="SpriteFrames" id=35]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 5, 2 )
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=20]
 animation = "LeftIdle"
-
-[sub_resource type="AnimationNodeAnimation" id=13]
-animation = "RightIdle"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id=14]
-blend_point_0/node = SubResource( 12 )
-blend_point_0/pos = -1.0
-blend_point_1/node = SubResource( 13 )
-blend_point_1/pos = 1.0
-
-[sub_resource type="AnimationNodeAnimation" id=54]
-animation = "LeftIdle"
-
-[sub_resource type="AnimationNodeAnimation" id=55]
-animation = "RightIdle"
-
-[sub_resource type="AnimationNodeAnimation" id=56]
-animation = "FrontIdle"
-
-[sub_resource type="AnimationNodeAnimation" id=57]
-animation = "BackIdle"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=58]
-blend_point_0/node = SubResource( 54 )
-blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 55 )
-blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 56 )
-blend_point_2/pos = Vector2( 0, 1 )
-blend_point_3/node = SubResource( 57 )
-blend_point_3/pos = Vector2( 0, -1 )
 
 [sub_resource type="AnimationNodeAnimation" id=21]
-animation = "LeftWalk"
+animation = "RightIdle"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
-animation = "RightWalk"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id=23]
-blend_point_0/node = SubResource( 21 )
+[sub_resource type="AnimationNodeBlendSpace1D" id=22]
+blend_point_0/node = SubResource( 20 )
 blend_point_0/pos = -1.0
-blend_point_1/node = SubResource( 22 )
+blend_point_1/node = SubResource( 21 )
 blend_point_1/pos = 1.0
 
-[sub_resource type="AnimationNodeAnimation" id=59]
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "LeftIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "RightIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "FrontIdle"
+
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "BackIdle"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=27]
+blend_point_0/node = SubResource( 23 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 24 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 25 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 26 )
+blend_point_3/pos = Vector2( 0, -1 )
+
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "LeftWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=60]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "RightWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=61]
+[sub_resource type="AnimationNodeBlendSpace1D" id=30]
+blend_point_0/node = SubResource( 28 )
+blend_point_0/pos = -1.0
+blend_point_1/node = SubResource( 29 )
+blend_point_1/pos = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "LeftWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "RightWalk"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "BackWalk"
 
-[sub_resource type="AnimationNodeAnimation" id=62]
+[sub_resource type="AnimationNodeAnimation" id=34]
 animation = "FrontWalk"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=63]
-blend_point_0/node = SubResource( 59 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=35]
+blend_point_0/node = SubResource( 31 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 60 )
+blend_point_1/node = SubResource( 32 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 61 )
+blend_point_2/node = SubResource( 33 )
 blend_point_2/pos = Vector2( 0, -1 )
-blend_point_3/node = SubResource( 62 )
+blend_point_3/node = SubResource( 34 )
 blend_point_3/pos = Vector2( 0, 1 )
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=64]
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
-[sub_resource type="AnimationNodeStateMachine" id=15]
-states/Idle/node = SubResource( 14 )
+[sub_resource type="AnimationNodeStateMachine" id=40]
+states/Idle/node = SubResource( 22 )
 states/Idle/position = Vector2( 175, 126 )
-states/Idle2/node = SubResource( 58 )
+states/Idle2/node = SubResource( 27 )
 states/Idle2/position = Vector2( 628, 129 )
-states/Walk/node = SubResource( 23 )
+states/Walk/node = SubResource( 30 )
 states/Walk/position = Vector2( 427, 126 )
-states/Walk2/node = SubResource( 63 )
+states/Walk2/node = SubResource( 35 )
 states/Walk2/position = Vector2( 838, 129 )
-transitions = [ "Idle", "Walk", SubResource( 24 ), "Walk", "Idle", SubResource( 25 ), "Idle2", "Walk2", SubResource( 64 ), "Walk2", "Idle2", SubResource( 65 ) ]
+transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ), "Idle2", "Walk2", SubResource( 38 ), "Walk2", "Idle2", SubResource( 39 ) ]
 start_node = "Idle2"
 graph_offset = Vector2( 164, 13 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=37]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=41]
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=42]
 resource_name = "BackIdle"
 length = 0.4
 loop = true
@@ -192,7 +192,7 @@ tracks/0/keys = {
 "values": [ 10, 11 ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=43]
 resource_name = "BackWalk"
 length = 0.4
 loop = true
@@ -209,7 +209,7 @@ tracks/0/keys = {
 "values": [ 12, 13 ]
 }
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=44]
 resource_name = "FrontIdle"
 length = 0.4
 loop = true
@@ -226,7 +226,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=45]
 resource_name = "FrontWalk"
 length = 0.4
 loop = true
@@ -243,7 +243,7 @@ tracks/0/keys = {
 "values": [ 14, 15 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=46]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -259,7 +259,7 @@ tracks/0/keys = {
 "values": [ 2, 3 ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=47]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -275,7 +275,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=48]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -291,7 +291,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=49]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -307,23 +307,26 @@ tracks/0/keys = {
 "values": [ 6, 7 ]
 }
 
+[sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 8, 7 )
+
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-material = SubResource( 26 )
-frames = SubResource( 35 )
+material = SubResource( 1 )
+frames = SubResource( 18 )
 frame = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 13 )
-shape = SubResource( 36 )
+shape = SubResource( 19 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 15 )
+tree_root = SubResource( 40 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 37 )
+parameters/playback = SubResource( 41 )
 parameters/Idle/blend_position = -0.000913262
 parameters/Idle2/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = -0.00639272
@@ -331,11 +334,19 @@ parameters/Walk2/blend_position = Vector2( 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
-anims/BackIdle = SubResource( 50 )
-anims/BackWalk = SubResource( 51 )
-anims/FrontIdle = SubResource( 52 )
-anims/FrontWalk = SubResource( 53 )
-anims/LeftIdle = SubResource( 38 )
-anims/LeftWalk = SubResource( 39 )
-anims/RightIdle = SubResource( 40 )
-anims/RightWalk = SubResource( 41 )
+anims/BackIdle = SubResource( 42 )
+anims/BackWalk = SubResource( 43 )
+anims/FrontIdle = SubResource( 44 )
+anims/FrontWalk = SubResource( 45 )
+anims/LeftIdle = SubResource( 46 )
+anims/LeftWalk = SubResource( 47 )
+anims/RightIdle = SubResource( 48 )
+anims/RightWalk = SubResource( 49 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"player",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 9 )
+shape = SubResource( 50 )

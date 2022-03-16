@@ -1,22 +1,24 @@
 extends Control
 
+export (Resource) var gameState
 
 onready var time := $"/root/Time"
 
-var mode := "Slots"
-
 func _ready():
-	swapMode()
+	
+	gameState.connect("stateChanged", self, "gameStateChanged")
 
 
-func swapMode():
-	match mode:
-		"Slots":
+func gameStateChanged(newState):
+	match newState:
+		"Game":
 			openSlots()
-		"Shop":
+		"Move":
+			openMove()
+		"Inventory":
 			openInventory()
 		_:
-			print("What is this mode, " + mode)
+			pass
 
 
 func _on_Timer_timeout():
@@ -25,28 +27,26 @@ func _on_Timer_timeout():
 
 func openSlots():
 	get_tree().paused = false
+	$HeresTheMap.visible = false
 	$Timer.paused = false
-	$MarginContainer/VBoxContainer/BottomBar.visible = true
-	$MarginContainer/VBoxContainer/BigSlotWrapper.visible = true
-	$MarginContainer/VBoxContainer/ShopUI.visible = false
-	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose.visible = false
-	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen.visible = true
+
 
 
 func openInventory():
 	get_tree().paused = true
+	$HeresTheMap.visible = false
 	$Timer.paused = true
-	$MarginContainer/VBoxContainer/BottomBar.visible = false
-	$MarginContainer/VBoxContainer/BigSlotWrapper.visible = false
-	$MarginContainer/VBoxContainer/ShopUI.visible = true
-	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryClose.visible = true
-	$MarginContainer/VBoxContainer/TopBarStatsUI/InventoryOpen.visible = false
-	
+
+
+func openMove():
+	get_tree().paused = false
+	$HeresTheMap.visible = true
+	$Timer.paused = false
 
 
 func _on_InventoryOpenButton_pressed():
-	openInventory()
+	gameState.changeStateToInventory()
 
 
 func _on_InventoryCloseButton_pressed():
-	openSlots()
+	gameState.tryMoveDownStateIfCurrentStateIs("Inventory")
