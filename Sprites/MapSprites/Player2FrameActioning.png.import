@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/conceptTopishDownishMockup.png-9331e779a1634533fa4918dc5d21c589.stex"
+path="res://.import/Player2FrameActioning.png-df3e54870f96eb04dc59436add445b16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/conceptTopishDownishMockup.png"
-dest_files=[ "res://.import/conceptTopishDownishMockup.png-9331e779a1634533fa4918dc5d21c589.stex" ]
+source_file="res://Sprites/MapSprites/Player2FrameActioning.png"
+dest_files=[ "res://.import/Player2FrameActioning.png-df3e54870f96eb04dc59436add445b16.stex" ]
 
 [params]
 

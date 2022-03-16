@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slotmachineviews.png-a4fd9517011febe6415c66dd72fc7b94.stex"
+path="res://.import/slotmachineviews.png-03b20f3ec492fc958aeccd14c7ca1351.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/slotmachineviews.png"
-dest_files=[ "res://.import/slotmachineviews.png-a4fd9517011febe6415c66dd72fc7b94.stex" ]
+source_file="res://Sprites/MapSprites/slotmachineviews.png"
+dest_files=[ "res://.import/slotmachineviews.png-03b20f3ec492fc958aeccd14c7ca1351.stex" ]
 
 [params]
 

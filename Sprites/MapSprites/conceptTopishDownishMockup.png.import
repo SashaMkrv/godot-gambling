@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CasinoSpriteSheet.png-3bbd2b9efa0f3f77249e1caf993490b5.stex"
+path="res://.import/conceptTopishDownishMockup.png-e196bd201da58e939e18e3faa099fee0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/CasinoSpriteSheet.png"
-dest_files=[ "res://.import/CasinoSpriteSheet.png-3bbd2b9efa0f3f77249e1caf993490b5.stex" ]
+source_file="res://Sprites/MapSprites/conceptTopishDownishMockup.png"
+dest_files=[ "res://.import/conceptTopishDownishMockup.png-e196bd201da58e939e18e3faa099fee0.stex" ]
 
 [params]
 

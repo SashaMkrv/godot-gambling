@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Sprites/OutlineShader.gdshader" type="Shader" id=1]
-[ext_resource path="res://Sprites/slotmachineviews.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/MapSprites/slotmachineviews.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/TopDownBits/PhysicalSlotMachine.gd" type="Script" id=3]
 [ext_resource path="res://Resources/DefaultGameState.tres" type="Resource" id=4]
 

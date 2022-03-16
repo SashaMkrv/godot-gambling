@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player2FrameActioning.png-3664f0840f79442160c41469c8535ece.stex"
+path="res://.import/CasinoSpriteSheet.png-29831ce4130b66adb7dd92fcef05c1ef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player2FrameActioning.png"
-dest_files=[ "res://.import/Player2FrameActioning.png-3664f0840f79442160c41469c8535ece.stex" ]
+source_file="res://Sprites/MapSprites/CasinoSpriteSheet.png"
+dest_files=[ "res://.import/CasinoSpriteSheet.png-29831ce4130b66adb7dd92fcef05c1ef.stex" ]
 
 [params]
 
