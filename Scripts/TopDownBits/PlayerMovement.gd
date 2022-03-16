@@ -24,7 +24,7 @@ func get_input():
 		$AnimationTree.set("parameters/Walk2/blend_position", velocity)
 		animationState.travel("Walk2")
 		var angle = velocity.angle_to(Vector2.UP)
-		area2D.rotation = angle
+		area2D.rotation = -angle
 	else:
 		animationState.travel("Idle2")
 	
