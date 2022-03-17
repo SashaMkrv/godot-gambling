@@ -79,7 +79,7 @@ func changeStateTo(state: String):
 	tryChangeStateTo(state)
 
 
-func changeStateToGameWithGame(gameScene: Resource):
+func changeStateToGameWithGame(gameScene: PackedScene):
 	changeStateToGame()
 	if currentState == "Game":
 		emit_signal("gameOpened", gameScene)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/UIBits/GameHandler.gd" type="Script" id=1]
+[ext_resource path="res://Resources/PlayerCoinResource.tres" type="Resource" id=2]
+[ext_resource path="res://Scenes/ViewportSlotMachine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/DefaultGameState.tres" type="Resource" id=4]
+
+[node name="GameHandler" type="Control"]
+margin_top = 41.0
+margin_bottom = 41.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gameState = ExtResource( 4 )
+playerCoin = ExtResource( 2 )
+
+[node name="MoneyToucher" parent="." instance=ExtResource( 3 )]
+position = Vector2( -50, -41 )
+player_coin = ExtResource( 2 )

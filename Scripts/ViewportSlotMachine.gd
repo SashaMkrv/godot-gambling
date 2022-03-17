@@ -3,6 +3,9 @@ extends Node2D
 
 export (Resource) var player_coin
 
+signal dontEscape
+signal canEscape
+
 
 enum PAYOUT_CLASSES {big2, big3, big4, big5,
 medium2, medium3, medium4, medium5,
@@ -35,10 +38,12 @@ func buttonPressed():
 
 
 func slots_started():
+	emit_signal("dontEscape")
 	spinStarted()
 
 
 func slots_stopped(tiles, coinsUsed):
+	emit_signal("canEscape")
 	# we want consecutive tiles of some class
 	# and since we're just doing 3 wheel slots here,
 	# we grab the payout size of whatever the matching tiles are
