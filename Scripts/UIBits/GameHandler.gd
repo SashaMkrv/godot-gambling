@@ -5,17 +5,17 @@ export (Resource) var gameState
 export (Resource) var playerCoin
 
 
-var EAT_INPUT := false
 var escapable := true
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel") and escapable:
-		return
-	if EAT_INPUT:
-		get_tree().set_input_as_handled()
-	# hahah this is... very bad and gettin quickly worse oh my god.
-	# I'm going to need to just refactor a comically large number of things
+	if event.is_action_pressed("ui_cancel"):
+		if escapable:
+			return
+		else:
+			# TODO: do this somewhere else. like anywhere things should actually get blocked.
+			get_tree().set_input_as_handled()
+		
 
 
 func _ready():
@@ -44,11 +44,7 @@ func gameClosed():
 
 
 func stateChanged(newState):
-	match(newState):
-		"Game":
-			EAT_INPUT = true
-		_:
-			EAT_INPUT = false
+	pass
 
 
 

@@ -10,6 +10,11 @@ var velocity = Vector2.ZERO
 func _ready():
 	setBlendPosition(Vector2.DOWN)
 
+
+func _unhandled_input(event):
+	pass #crap. how do I eat the events. how did this WORK with the universal event kill??
+
+
 func get_input():
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):

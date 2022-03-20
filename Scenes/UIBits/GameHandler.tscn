@@ -9,9 +9,6 @@
 margin_top = 41.0
 margin_bottom = 41.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 gameState = ExtResource( 4 )
 playerCoin = ExtResource( 2 )
 

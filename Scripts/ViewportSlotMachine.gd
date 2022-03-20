@@ -52,8 +52,10 @@ func slots_stopped(tiles, coinsUsed):
 	
 	var baseCoins = classToCoin[payoutClass]
 	var coinsGot = baseCoins * coinsUsed
-	
-	player_coin.addCoins(coinsGot)
+	if player_coin == null:
+		print("no coin source to supplement :(")
+	else:
+		player_coin.addCoins(coinsGot)
 
 
 func getPayoutClass(tiles):
@@ -114,5 +116,8 @@ func getPayoutForClassAndLength(tile, tileClass, runLength):
 	return PAYOUT_CLASSES.none
 
 func spinStarted():
-	player_coin.eatCoins($ControlWrapper/CoinAdding.getCoinCount())
+	if (player_coin == null):
+		print("no coin source to consume :(")
+	else:
+		player_coin.eatCoins($ControlWrapper/CoinAdding.getCoinCount())
 	$ControlWrapper/CoinAdding.reset()

@@ -18,7 +18,12 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 
 
 func click():
-	if (player_coin.coins > getCoinCount()):
+	var canCoins = 1000
+	if player_coin == null:
+		print("no coin source found, assuming you're good for it")
+	else:
+		canCoins = player_coin.coins
+	if (canCoins > getCoinCount()):
 			frame = min(getCoinCount() + 1, 3)
 			sounder.coin()
 
