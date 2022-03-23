@@ -148,6 +148,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 21 )
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": "should be able to name this in a wy that lets the map be a resource, so we can make a bunch of packed scenes with different maps that all look similar. oh, also the backsplash texture. if you set one at the top and replace it in antoher instance, does it change all of the others, or make a new one, or what???"
 }
 gameState = ExtResource( 27 )
@@ -1031,14 +1032,14 @@ hatFrame = ExtResource( 20 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar"]
 margin_left = 36.0
-margin_right = 118.0
+margin_right = 154.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 alignment = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar/VBoxContainer"]
-margin_top = 7.0
-margin_right = 82.0
+margin_top = 18.0
+margin_right = 118.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 0
@@ -1047,12 +1048,12 @@ custom_constants/margin_left = 0
 custom_constants/margin_bottom = 0
 
 [node name="NinePatchRect" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar/VBoxContainer/MarginContainer2" instance=ExtResource( 2 )]
-margin_right = 82.0
-margin_bottom = 25.0
+margin_right = 118.0
+margin_bottom = 14.0
 
 [node name="MarginContainer" type="MarginContainer" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar/VBoxContainer/MarginContainer2"]
-margin_right = 82.0
-margin_bottom = 25.0
+margin_right = 118.0
+margin_bottom = 14.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 4
 custom_constants/margin_left = 5
@@ -1064,12 +1065,13 @@ __meta__ = {
 [node name="Label" type="Label" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar/VBoxContainer/MarginContainer2/MarginContainer"]
 margin_left = 5.0
 margin_top = 4.0
-margin_right = 77.0
-margin_bottom = 23.0
-text = "lol, what house edge?"
+margin_right = 113.0
+margin_bottom = 12.0
+text = "nothing. nothing. nothing!"
 autowrap = true
 
 [node name="OtherCharacterPortrait" type="TextureRect" parent="GodUI/TopUI/Control/MarginContainer/VBoxContainer/BottomBarVis/BottomBar"]
+visible = false
 margin_left = 122.0
 margin_right = 154.0
 margin_bottom = 32.0
